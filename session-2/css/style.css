@@ -1,0 +1,154 @@
+:root {
+  --hover-color: #74a35e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-size: 16px;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 1200px;
+  padding: 1rem 2rem;
+}
+
+.bai1 {
+  text-align: center;
+  width: 100%;
+  margin-left: -4rem;
+}
+.btn {
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 6rem;
+  margin-left: 4rem;
+  padding: 3rem 7rem;
+  text-transform: uppercase;
+  width: calc(100% / 3 - 5rem);
+}
+
+.btn--success {
+  background: linear-gradient(to right, #67ebad, #4fccc7);
+  box-shadow: 0 16px 40px -6px #67ebad;
+}
+.btn--information {
+  background: linear-gradient(to right, #ace4fe, #72b6ed);
+  box-shadow: 0 16px 40px -6px #ace4fe;
+}
+.btn--buynow {
+  background: linear-gradient(to right, #afbefe, #9c80ed);
+  box-shadow: 0 16px 40px -6px #afbefe;
+}
+.btn--warning {
+  background: linear-gradient(to right, #fad699, #f7a768);
+  box-shadow: 0 16px 40px -6px #fad699;
+}
+.btn--contact {
+  background: linear-gradient(to right, #f8bfab, #ed7572);
+  box-shadow: 0 16px 40px -6px #f8bfab;
+}
+.btn--delete {
+  background: linear-gradient(to right, #f7a8b7, #f4839d);
+  box-shadow: 0 16px 40px -6px #f7a8b7;
+}
+.bai3-4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -3rem;
+  flex-wrap: wrap;
+}
+.box {
+  width: calc(100% / 6 - 5rem);
+  margin-left: 3rem;
+}
+.box:not(:first-child) {
+  margin-bottom: 5rem;
+}
+.box__rectangle {
+  width: 100%;
+  height: 17rem;
+  border-radius: 6px;
+}
+.box__rectangle + p {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+.box p:nth-of-type(2) {
+  font-weight: bold;
+  color: #b4bbc8;
+  margin-top: 0.5rem;
+}
+.box:first-child .box__rectangle {
+  background-color: #a24bf0;
+}
+.box:nth-child(2) .box__rectangle {
+  background-color: #38dbb2;
+}
+.box:nth-child(3) .box__rectangle {
+  background-color: #25c2e3;
+}
+.box:nth-child(4) .box__rectangle {
+  background-color: #ea344f;
+}
+.box:nth-child(5) .box__rectangle {
+  background-color: #dd44a7;
+}
+.box:nth-child(6) .box__rectangle {
+  background-color: #f7ac2a;
+}
+.box:nth-last-child(6) .box__rectangle {
+  background-color: #000000;
+}
+.box:nth-last-child(5) .box__rectangle {
+  background-color: #555555;
+}
+.box:nth-last-child(4) .box__rectangle {
+  background-color: #888888;
+}
+.box:nth-last-child(3) .box__rectangle {
+  background-color: #d2d2d2;
+}
+.box:nth-last-child(2) .box__rectangle {
+  background-color: #e8e8e8;
+}
+.box:nth-last-child(1) .box__rectangle {
+  background-color: #fcfcfc;
+}
+.box .box__rectangle:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  transition: all 0.25s ease-in;
+}
+
+div[data-link^="https"] {
+  color: green;
+}
+div[data-link$="vn"] {
+  color: red;
+}
+div[data-name*="hello"] {
+  color: blue;
+}
+input[type="email"] {
+  border: 2px solid rgb(63, 63, 47);
+}
+input[name="fullname"] {
+  border: 2px solid rgb(33, 129, 65);
+}
