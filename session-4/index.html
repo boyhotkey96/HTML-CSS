@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,38 +12,165 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet"> -->
 </head>
+
 <body>
-   <div class="session1">
-       <div class="card">
-           <div class="card-left">
-               <div class="card-left__box">
-                   <p class="card-left__title">Visa</p>
-                   <i class="fas fa-check card-left__icon"></i>
-                   <div class="card-left__circle"></div>
-               </div>
-               <div class="card-left__account">
-                   <div class="card-left__name">Peter Quill</div>
+    <div class="session1">
+        <div class="card">
+            <div class="card-left">
+                <div class="card-left__box">
+                    <p class="card-left__title">Visa</p>
+                    <i class="fas fa-check card-left__icon"></i>
+                    <div class="card-left__circle"></div>
+                </div>
+                <div class="card-left__account">
+                    <div class="card-left__name">Peter Quill</div>
                     <div class="card-left__number">4232 5600 0070 1105</div>
                     <div class="card-left__box2">
-                        <div class="card-left__date">08/19 xxaasdasdsdasdada</div>
+                        <div class="card-left__date">08/19</div>
                         <p>***</p>
                     </div>
-               </div>
-           </div>
-           <div class="card-right">
-               <div class="card-right__formart">Psd</div>
-               <div class="card-right__watch">
-                   <img src="./images/watch.png" alt="watch">
-                   <div class="card-right__number">x2</div>
-               </div>
-               <span class="card-right__price">$410</span>
-               <div class="card-right__pay">
+                </div>
+            </div>
+            <div class="card-right">
+                <div class="card-right__formart">Psd</div>
+                <div class="card-right__watch">
+                    <img src="./images/watch.png" alt="watch">
+                    <div class="card-right__number">x2</div>
+                </div>
+                <span class="card-right__price">$410</span>
+                <div class="card-right__pay">
                     <i class="fas fa-lock"></i>
                     <span>Secure Pay</span>
-               </div>
-           </div>
-       </div>
-   </div>
-   <div class="session2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="session2">
+        <form action="" class="register">
+            <div class="register__name">Registration</div>
+            <div class="register__content">
+                <div class="register__box">
+                    <label for="firstname">first name</label>
+                    <input type="text" id="firstname" value="John" required>
+                </div>
+                <div class="register__box">
+                    <label for="lastname">last name</label>
+                    <input type="text" id="lastname" value="Doe">
+                </div>
+                <div class=register__box>
+                    <label for="address">address</label>
+                    <input type="text" id="address" value="Your Address Line 1" required>
+                </div>
+                <div class="register__box">
+                    <label for="password">password</label>
+                    <input type="password" id="password" value="0123456789">
+                </div>
+                <div class="register__box">
+                    <label for="company">company</label>
+                    <input type="text" id="company" value="Spirit Airlines" required>
+                </div>
+                <div class="register__box">
+                    <label for="designation">designation</label>
+                    <input type="text" id="designation" value="Flight Attendants" required>
+                </div>
+                <div class="register__box">
+                    <label for="email">email id</label>
+                    <input type="text" id="email" value="youremail@company.com" required>
+                </div>
+                <div class="register__box">
+                    <label for="contact">contact no</label>
+                    <input type="text" id="contact" value="+123 123456790" required>
+                </div>
+            </div>
+            <input class="register__submit" type="submit" value="submit" required>
+        </form>
+    </div>
+
+    <div class="session3">
+        <div class="shopping">
+            <div class="shopping-head">
+                <div class="shopping-head__logo">shppng</div>
+                <div class="shopping-head__breadcrumb">
+                    <div class="shopping-head__item">
+                        <span>Shopping Bag</span>
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                    <div class="shopping-head__item active">
+                        <span>Checkout</span>
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                    <div class="shopping-head__item">Confirmation</div>
+                </div>
+                <i class="fas fa-cart-plus shopping-head__cart"></i>
+            </div>
+            <form action="" class="shopping-body">
+                <div class="shopping-personal">
+                    <div class="shopping-personal__title">Personal information</div>
+                    <div action="" class="shopping-personal__content">
+                        <div class="shopping-personal__box two">
+                            <div class="shopping-personal__box-left">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" value="Adrien">
+                            </div>
+                            <div class="shopping-personal__box-right">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" value="Gervalx" required>
+                            </div>
+                        </div>
+                        <div class="shopping-personal__box">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="adrien.gervalx@gmail.com" required>
+                        </div>
+                        <div class="shopping-personal__box">
+                            <label for="street">Street</label>
+                            <input type="text" id="street" value="284, Place de la bourse" required>
+                        </div>
+                        <div class="shopping-personal__box two">
+                            <div class="shopping-personal__box-left">
+                                <label for="city">City</label>
+                                <input type="text" id="city" value="Lille" required>
+                            </div>
+                            <div class="shopping-personal__box-right">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" value="France" required>
+                            </div>
+                        </div>
+                        <div class="shopping-personal__box">
+                            <label for="phone">Phone number</label>
+                            <input type="text" id="phone" value="+33 612 34 56 78">
+                        </div>
+                    </div>
+                </div>
+                <div class="shopping-delivery">
+                    <div class="shopping-delivery__content">
+                        <div class="shopping-delivery__title">Delivery</div>
+                        <label for="">Delivery fee</label>
+                        <div class="shopping-delivery__box">
+                            <div class="shopping-delivery__item">
+                                <p>0$</p>
+                                <p>3-4 weeks</p>
+                            </div>
+                            <div class="shopping-delivery__item">
+                                <p>5$</p>
+                                <p>2-5 weeks</p>
+                            </div>
+                        </div>
+                        <p class="shopping-delivery__text">Estimated delivery date <b>August 4th.</b></p>
+                        <p class="shopping-delivery__text">Evey package has a tracking number.</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="subscribe" id="subscribe">
+                        <label for="subscribe">Subscribe t our newsletter</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="account" id="account">
+                        <label for="account">Create an account</label>
+                    </div>
+                    <input class="shopping-delivery__btn" type="submit" value="Confirm my order">
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
