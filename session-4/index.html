@@ -38,10 +38,10 @@
                     <div class="card-right__number">x2</div>
                 </div>
                 <span class="card-right__price">$410</span>
-                <div class="card-right__pay">
+                <button class="card-right__pay">
                     <i class="fas fa-lock"></i>
                     <span>Secure Pay</span>
-                </div>
+                </button>
             </div>
         </div>
     </div>
@@ -90,17 +90,19 @@
         <div class="shopping">
             <div class="shopping-head">
                 <div class="shopping-head__logo">shppng</div>
-                <div class="shopping-head__breadcrumb">
-                    <div class="shopping-head__item">
-                        <span>Shopping Bag</span>
+                <ul class="shopping-head__breadcrumb">
+                    <li class="shopping-head__item">
+                        <a href="#">Shopping Bag</a>
                         <i class="fas fa-caret-right"></i>
-                    </div>
-                    <div class="shopping-head__item active">
-                        <span>Checkout</span>
+                    </li>
+                    <li class="shopping-head__item active">
+                        <a href="#" class="active">Checkout</a>
                         <i class="fas fa-caret-right"></i>
-                    </div>
-                    <div class="shopping-head__item">Confirmation</div>
-                </div>
+                    </li>
+                    <li class="shopping-head__item">
+                        <a href="#">Confirmation</a>
+                    </li>
+                </ul>
                 <i class="fas fa-cart-plus shopping-head__cart"></i>
             </div>
             <form action="" class="shopping-body">
@@ -137,7 +139,10 @@
                         </div>
                         <div class="shopping-personal__box">
                             <label for="phone">Phone number</label>
-                            <input type="text" id="phone" value="+33 612 34 56 78">
+                            <div class="shopping-personal__phone">
+                                <input type="text" value="+33" disabled>
+                                <input type="text" id="phone" value="612 34 56 78">
+                            </div>
                         </div>
                     </div>
                 </div>

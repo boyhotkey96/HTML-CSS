@@ -17,6 +17,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.6rem;
+  overflow-x: hidden;
 }
 
 img {
@@ -275,12 +276,16 @@ b {
     &__item {
       display: inline-block;
       font-size: 1.6rem;
+      a {
+        text-decoration: none;
+        color: #ccc;
+        &.active {
+          color: var(--session3-primary);
+        }
+      }
       & i {
         padding: 0rem 0.8rem;
         font-size: 1.2rem;
-      }
-      &.active {
-        color: var(--session3-primary);
       }
     }
     &__cart {
@@ -339,6 +344,22 @@ b {
         transition: 0.25s linear;
         &:focus {
           border-color: var(--session3-primary);
+        }
+      }
+    }
+    &__phone {
+      display: flex;
+      input {
+        width: 20%;
+        cursor: not-allowed;
+        text-align: center;
+        background-color: #eee;
+        + input {
+          text-align: unset;
+          background-color: unset;
+          cursor: unset;
+          width: 80%;
+          padding: 0 1.5rem;
         }
       }
     }
