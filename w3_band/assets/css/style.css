@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+  width: 100%;
+}
+
+#header {
+  background-color: #000;
+  height: 4.5rem;
+}
+.nav .list-item {
+  display: inline-block;
+  transition: 0.2s ease-out;
+  position: relative;
+}
+.nav .list-item:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+.nav .list-item:hover a {
+  color: #000;
+}
+.nav .list-item > a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  padding: 0 2.4rem;
+  display: inline-block;
+}
+.nav-sub {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  min-width: 16rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-2em);
+  transition: transform 0.25s ease-out;
+}
+.nav i { color: white;}
+.nav .list-item:hover .nav-sub {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.3);
+}
+.nav-sub .list-itemsub {
+  list-style-type: none;
+}
+.nav-sub .list-itemsub > a {
+  color: black;
+  text-decoration: none;
+  line-height: 4rem;
+  font-size: 1.7rem;
+  padding-left: 2.4rem;
+  width: 100%;
+  display: inline-block;
+}
+.nav-sub .list-itemsub:hover {
+  background-color: #ccc;
+}
