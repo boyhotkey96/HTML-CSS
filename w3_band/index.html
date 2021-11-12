@@ -84,7 +84,7 @@
                             <div class="place-city">New York</div>
                             <div class="place-date">Fri 27 Nov 2016</div>
                             <div class="place-desc">Prasent tincidunt sed tellus ut rutum sed vitae justo.</div>
-                            <button class="btn">Buy Tickets</button>
+                            <button class="btn btn-ticket">Buy Tickets</button>
                         </div>
                     </div>
                     <div class="place-item">
@@ -93,7 +93,7 @@
                             <div class="place-city">Paris</div>
                             <div class="place-date">Sat 28 Nov 2016</div>
                             <div class="place-desc">Prasent tincidunt sed tellus ut rutum sed vitae justo.</div>
-                            <button class="btn">Buy Tickets</button>
+                            <button class="btn btn-ticket">Buy Tickets</button>
                         </div>
                     </div>
                     <div class="place-item">
@@ -102,9 +102,33 @@
                             <div class="place-city">San Francisco</div>
                             <div class="place-date">Sun 29 Nov 20166</div>
                             <div class="place-desc">Prasent tincidunt sed tellus ut rutum sed vitae justo.</div>
-                            <button class="btn">Buy Tickets</button>
+                            <button class="btn btn-ticket">Buy Tickets</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal">
+            <div class="modal-container">
+                <div class="modal-close"><i class="fas fa-times"></i></div>
+                <div class="modal-header">
+                    <i class="fas fa-suitcase"></i>
+                    <span>Tickets</span>
+                </div>
+                <form class="modal-body">
+                    <label for="money" class="modal-label">
+                        <i class="fas fa-shopping-cart"></i> Tickets, $15 per person
+                    </label>
+                    <input type="text" class="modal-input" id="money" placeholder="How many?">
+                    <label for="email" class="modal-label">
+                        <i class="fas fa-user"></i> Send To
+                    </label>
+                    <input type="email" class="modal-input" id="email" placeholder="Enter email">
+                    <button type="submit" class="btn btn-submit">Pay<i class="fas fa-check"></i></button>
+                </form>
+                <div class="modal-footer">
+                    <button class="btn btn-close">Close <i class="fas fa-times"></i></button>
+                    <div class="modal-help">Need <a href="#">help?</a></div>
                 </div>
             </div>
         </div>

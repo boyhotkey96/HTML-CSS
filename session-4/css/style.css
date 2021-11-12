@@ -172,6 +172,7 @@ b {
   margin-top: auto;
   cursor: pointer;
   transition: background-color 0.25s ease-out;
+  border: none;
 }
 .card-right__pay i {
   margin-right: 1rem;
