@@ -24,10 +24,16 @@ select {
   font: inherit;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 #wrapper {
   width: 100%;
 }
 
+/* Header */
 #header {
   background-color: #000;
   height: 4.5rem;
@@ -107,6 +113,7 @@ select {
   background-color: #f44336;
 }
 
+/* Slider */
 #slider {
   width: 100%;
   padding-top: 50%;
@@ -129,13 +136,14 @@ select {
   margin-top: 2.5rem;
 }
 
+/* About */
 #about {
+}
+.section-content {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 6.4rem 2rem;
-}
-.section-content {
+  padding: 6.4rem 2rem 11.2rem;
 }
 .content-title {
   font-size: 3rem;
@@ -170,14 +178,10 @@ select {
   margin-top: 1.5rem;
 }
 
+/* Tour */
 #tour {
   background-color: black;
-  padding: 6.4rem 3.2rem;
-}
-#tour .section-content {
   color: white;
-  max-width: 80rem;
-  margin: 0 auto;
 }
 .ticket-list {
   background-color: white;
@@ -256,10 +260,7 @@ select {
   color: black;
 }
 
-#contact {
-  margin: 4rem 0;
-}
-
+/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -272,13 +273,13 @@ select {
   justify-content: center;
   align-items: center;
   display: none;
-  animation: modalFadeIn 0.5s ease;
 }
 .modal-container {
   width: 90rem;
   max-width: calc(100% - 4rem);
   background-color: white;
   position: relative;
+  animation: modalFadeIn 0.5s ease;
 }
 .modal-header {
   background-color: #009688;
@@ -377,4 +378,83 @@ select {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Contact */
+.contact-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.2rem;
+}
+.contact-item {
+  width: 50%;
+}
+.contact-item form {
+  text-align: center;
+}
+.contact-item p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.contact-item i[class*="fas"] {
+  width: 3rem;
+}
+.contact-item input {
+  padding: 0.8rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.contact-item-col-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.contact-item-col-2 input {
+  width: calc(50% - 1rem);
+}
+.contact-item button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: 0.25s linear;
+}
+.contact-item button:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Map */
+#map img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(50%);
+}
+
+/* Footer */
+#footer {
+  padding: 6.4rem 0;
+  text-align: center;
+}
+.social a {
+  font-size: 2.5rem;
+  color: black;
+  opacity: 0.6;
+}
+.copyright {
+  margin-top: 1.5rem;
+  color: black;
+  opacity: 0.6;
+}
+.copyright a {
+  color: black;
+}
+.social a:hover,
+.copyright a:hover {
+  opacity: 0.4;
 }
