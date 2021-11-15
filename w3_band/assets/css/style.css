@@ -17,7 +17,8 @@ body {
   line-height: 1.5;
 }
 input,
-button, textarea,
+button,
+textarea,
 select {
   font-family: inherit;
   font: inherit;
@@ -259,7 +260,7 @@ select {
   margin: 4rem 0;
 }
 
-#modal {
+.modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -271,9 +272,11 @@ select {
   justify-content: center;
   align-items: center;
   display: none;
+  animation: modalFadeIn 0.5s ease;
 }
 .modal-container {
   width: 90rem;
+  max-width: calc(100% - 4rem);
   background-color: white;
   position: relative;
 }
@@ -359,5 +362,19 @@ select {
   cursor: pointer;
 }
 .modal-help a {
-  color: #2196F3;
+  color: #2196f3;
+}
+.modal.open {
+  display: flex;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
