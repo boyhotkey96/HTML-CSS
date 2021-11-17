@@ -162,7 +162,7 @@ img {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 6.4rem 2rem 11.2rem;
+  padding: 6.4rem 1.6rem 6.4rem;
 }
 .content-title {
   font-size: 3rem;
@@ -185,6 +185,7 @@ img {
 .about-list {
   padding: 3.2rem 0;
   display: flex;
+  flex-wrap: wrap;
 }
 .about-item {
   width: 33.33333%;
@@ -234,6 +235,7 @@ img {
 }
 .place-list {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 3.2rem;
   margin-left: -0.8rem;
   margin-right: -0.8rem;
@@ -241,6 +243,7 @@ img {
 .place-item {
   width: 33.33333%;
   padding: 0 0.8rem;
+  margin-bottom: 4.8rem;
 }
 .place-img {
   width: 100%;
@@ -296,7 +299,7 @@ img {
 }
 .modal-container {
   width: 90rem;
-  max-width: calc(100% - 4rem);
+  max-width: calc(100% - 3rem);
   background-color: white;
   position: relative;
   animation: modalFadeIn 0.5s ease;
@@ -405,12 +408,13 @@ img {
   display: flex;
   justify-content: space-between;
   margin-top: 3.2rem;
+  flex-wrap: wrap;
 }
 .contact-item {
   width: 50%;
 }
 .contact-item form {
-  text-align: center;
+  text-align: right;
 }
 .contact-item p {
   font-size: 1.8rem;
@@ -427,6 +431,7 @@ img {
 }
 .contact-item-col-2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
@@ -515,5 +520,29 @@ img {
   .menu-bar {
     display: block;
   }
- 
+  .about-item {
+    width: 100%;
+    margin-top: 3.2rem;
+  }
+  .place-list {
+    margin-top: 1.6rem;
+  }
+  .place-item {
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+  .contact-item {
+    width: 100%;
+    margin-top: 0.6rem;
+  }
+  .contact-item-col-2 input {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .contact-item button {
+    width: 100%;
+  }
+  .btn-ticket {
+    width: 100%;
+  }
 }
