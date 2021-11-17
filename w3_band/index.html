@@ -16,12 +16,14 @@
     <div id="wrapper">
         <div id="header">
             <ul class="nav">
-                <li class="list-item"><a href="#slider">home</a></li>
+                <li class="list-item"><a href="#">home</a></li>
                 <li class="list-item"><a href="#about">band</a></li>
                 <li class="list-item"><a href="#tour">tour</a></li>
                 <li class="list-item"><a href="#contact">contact</a></li>
                 <li class="list-item">
-                    <a href="">more <i class="fas fa-caret-down"></i></a>
+                    <a href="#">
+                        more <i class="fas fa-caret-down"></i>
+                    </a>
                     <ul class="nav-sub">
                         <li class="list-itemsub"><a href="#">Merchandise</a></li>
                         <li class="list-itemsub"><a href="#">Extra</a></li>
@@ -31,6 +33,9 @@
             </ul>
             <div class="search">
                 <i class="fas fa-search"></i>
+            </div>
+            <div class="menu-bar">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
         <div id="slider">
@@ -175,6 +180,7 @@
     </div>
 </body>
 <script>
+    // Modal
     var btnsTicket = document.querySelectorAll('.js-btn-ticket')
     var modal = document.querySelector('.modal')
     var modalClose = document.querySelector('.modal-close')
@@ -200,6 +206,46 @@
     modalClose.addEventListener('click', hideModal)
     btnClose.addEventListener('click', hideModal)
     modal.addEventListener('click', hideModal)
+
+    // Menu
+    var menuItems = document.querySelectorAll('.nav li a[href*="#"]')
+    var menu = document.querySelector('.menu-bar')
+    var header = document.querySelector('#header')
+    var subMenu = document.querySelector('.nav .list-item .nav-sub')
+    var sss = document.querySelector('.nav .list-item:hover .nav-sub')
+    var headerHeight = header.clientHeight
+
+    // Sự kiện của menu
+    menu.onclick = function () {
+        var isClosed = header.clientHeight
+        if (isClosed === headerHeight) {
+            header.style.height = 'auto'
+        } else {
+            header.style.height = '45px'
+        }
+    }
+
+    //Item của Menu
+    for (var i = 0; i < menuItems.length; i++) {
+        var count = 0;
+
+        menuItems[i].onclick = function (event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('nav-sub')
+
+            if (isParentMenu) {
+                if (count == 0) {
+                    event.preventDefault();
+                    subMenu.style.display = 'block';
+                    count = 1;
+                } else {
+                    subMenu.style.display = 'none';
+                    count = 0;
+                }
+            } else {
+                header.style.height = null;
+            }
+        }
+    }
 </script>
 
 </html>

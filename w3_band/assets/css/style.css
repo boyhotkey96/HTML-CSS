@@ -44,6 +44,9 @@ img {
   width: 100%;
   z-index: 1;
 }
+.nav {
+  width: 100%;
+}
 .nav .list-item {
   display: inline-block;
   transition: 0.2s ease-out;
@@ -72,16 +75,17 @@ img {
   min-width: 16rem;
   visibility: hidden;
   opacity: 0;
+  display: none;
   transform: translateY(-2em);
   transition: transform 0.25s ease-out;
 }
-
 .nav i {
   color: white;
 }
 .nav .list-item:hover .nav-sub {
   visibility: visible;
   opacity: 1;
+  display: block;
   transform: translateY(0%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -105,6 +109,15 @@ img {
   cursor: pointer;
   transition: background-color 0.25s linear;
 }
+.menu-bar {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  margin-left: auto;
+  display: none;
+}
+.menu-bar,
 .search i {
   color: white;
   font-size: 1.5rem;
@@ -113,12 +126,17 @@ img {
 .search:hover {
   background-color: #f44336;
 }
+.menu-bar:hover {
+  color: black;
+  background-color: #ccc;
+}
 
 /* Slider */
 #slider {
   width: 100%;
+  margin-top: 4.5rem;
   padding-top: 50%;
-  background: url("../images/slider1.jpg") center center / cover no-repeat;
+  background: url("../images/slider1.jpg") top center / cover no-repeat;
   position: relative;
 }
 .text-content {
@@ -176,6 +194,7 @@ img {
 }
 .about-image {
   width: 60%;
+  margin: 0 auto;
   margin-top: 1.5rem;
 }
 
@@ -458,4 +477,43 @@ img {
 .social a:hover,
 .copyright a:hover {
   opacity: 0.4;
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 740px) {
+  #header {
+    overflow: hidden;
+  }
+  .nav .list-item {
+    display: block;
+  }
+  .nav .list-item > a {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .nav .list-item:first-child a {
+    display: inline-block;
+  }
+  .nav .nav-sub {
+    /* display: block; */
+    position: initial;
+    background-color: black;
+  }
+  .nav .list-item:hover .nav-sub {
+    display: block;
+  }
+  .nav .list-item:hover a {
+    color: white;
+  }
+  .nav-sub .list-itemsub > a {
+    padding-left: 4.4rem;
+  }
+  .search {
+    display: none;
+  }
+  .menu-bar {
+    display: block;
+  }
+ 
 }
