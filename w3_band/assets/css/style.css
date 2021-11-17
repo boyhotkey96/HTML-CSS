@@ -420,6 +420,16 @@ img {
   font-size: 1.8rem;
   line-height: 1.5;
 }
+.contact-item a {
+  color: black;
+  opacity: 0.8;
+  text-decoration: none;
+  transition: 0.25s linear;
+}
+.contact-item a:hover {
+  color: blue;
+  opacity: 1;
+}
 .contact-item i[class*="fas"] {
   width: 3rem;
 }
@@ -448,6 +458,8 @@ img {
   border: 0;
   cursor: pointer;
   transition: 0.25s linear;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .contact-item button:hover {
   background-color: #ccc;
@@ -482,6 +494,31 @@ img {
 .social a:hover,
 .copyright a:hover {
   opacity: 0.4;
+}
+
+/* PC */
+@media (min-width: 1024px) {
+}
+
+/* Tablet and mobile */
+@media (max-width: 1023px) {
+  .btn-ticket {
+    padding: 1.5rem 2.4rem;
+  }
+  .contact-item p {
+    line-height: 2;
+  }
+  .social a {
+    font-size: 3.6rem;
+    margin: 0 0.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .contact-item input {
+    padding: 1.5rem;
+  }
 }
 
 /* Responsive Mobile */
@@ -533,7 +570,7 @@ img {
   }
   .contact-item {
     width: 100%;
-    margin-top: 0.6rem;
+    margin-top: 1.6rem;
   }
   .contact-item-col-2 input {
     width: 100%;
