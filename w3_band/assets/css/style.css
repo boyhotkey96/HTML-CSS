@@ -6,7 +6,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
@@ -24,7 +23,6 @@ select {
   font-family: inherit;
   font: inherit;
 }
-
 img {
   width: 100%;
   display: block;
@@ -153,11 +151,10 @@ img {
 .text-desc {
   font-size: 1.5rem;
   margin-top: 2.5rem;
+  text-shadow: 0 0 1px #000;
 }
 
 /* About */
-#about {
-}
 .section-content {
   max-width: 80rem;
   margin-left: auto;
@@ -191,8 +188,7 @@ img {
   width: 33.33333%;
   text-align: center;
 }
-.about-name {
-}
+
 .about-image {
   width: 60%;
   margin: 0 auto;
@@ -391,7 +387,6 @@ img {
 .modal.open {
   display: flex;
 }
-
 @keyframes modalFadeIn {
   from {
     opacity: 0;
