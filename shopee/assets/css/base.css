@@ -1,0 +1,36 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+}
+
+.grid-full-width {
+  width: 100%;
+}
+
+.grid__grow {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,9 @@
+
+.test {
+  height: 100px;
+  width: 100px;
+  background-color: var(--black-color);
+  padding: 10.5px;
+  font-size: 5rem;
+}
+
