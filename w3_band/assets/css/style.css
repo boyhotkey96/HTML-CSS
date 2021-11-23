@@ -49,6 +49,7 @@ img {
   display: inline-block;
   transition: 0.2s ease-out;
   position: relative;
+  height: 100%;
 }
 .nav .list-item:hover {
   background-color: #ccc;
