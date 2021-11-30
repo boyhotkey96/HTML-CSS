@@ -26,7 +26,7 @@ img {
   width: $width;
   height: $height;
 }
-@mixin flex(
+@mixin displayflex(
   $justify-content: flex-start,
   $align-items: stretch,
   $flex-direction: row,
@@ -63,7 +63,7 @@ img {
   --border-radius: 20px;
   @include size(70rem, 43rem);
   margin: auto;
-  @include flex(space-between, center);
+  @include displayflex(space-between, center);
   &__left {
     @include size(50%, 50rem);
     background: linear-gradient(
@@ -96,7 +96,7 @@ img {
     }
   }
   &__slide {
-    @include flex(flex-start, center, column);
+    @include displayflex(flex-start, center, column);
   }
   &__image {
     transform: translateX(-8rem);
@@ -140,7 +140,7 @@ img {
     margin-bottom: 4rem;
   }
   &__info {
-    @include flex(flex-start, baseline);
+    @include displayflex(flex-start, baseline);
     margin-bottom: 2rem;
     font-size: 1.3rem;
     &-title {
@@ -148,7 +148,7 @@ img {
     }
     &-content {
       width: 70%;
-      @include flex();
+      @include displayflex();
       text-transform: uppercase;
     }
   }
@@ -181,7 +181,7 @@ img {
 
 .list {
   &__dot {
-    @include flex(center, center);
+    @include displayflex(center, center);
     width: 100%;
     position: absolute;
     bottom: 4rem;
@@ -203,7 +203,7 @@ img {
     }
   }
   &__size {
-    @include flex(flex-start, center);
+    @include displayflex(flex-start, center);
     &-item {
       cursor: pointer;
       &:not(:last-child) {
@@ -212,7 +212,7 @@ img {
     }
   }
   &__color {
-    @include flex(flex-start, center);
+    @include displayflex(flex-start, center);
     &-item {
       @include size(1rem);
       border-radius: 50%;
