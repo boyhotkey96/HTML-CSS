@@ -1,0 +1,54 @@
+.about {
+  padding: 9rem 0 11rem;
+  &__list {
+    @include flex(space-between);
+  }
+  &__item {
+    width: calc(100% / 3 - 3rem);
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s ease;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $third-color;
+      transition: 0.25s ease;
+      z-index: -1;
+    }
+    &:hover {
+      transform: translate(-1rem, -1rem);
+      &::after {
+        transform: translate(1rem, 1rem);
+      }
+      .about-overlay {
+        @include show();
+      }
+    }
+  }
+  &-overlay {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, $primary-color, $secondary-color);
+    @include flex(center, center, null, column);
+    color: #fff;
+    @include hide();
+    transition: 0.25s ease;
+    &__icon {
+      font-size: 2.5rem;
+    }
+    &__name {
+      margin-top: 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+  }
+}

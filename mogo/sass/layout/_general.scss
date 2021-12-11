@@ -10,3 +10,39 @@
   margin: 0 auto;
   padding: 0 2rem;
 }
+
+.box {
+  margin: 0 auto;
+  max-width: 96rem;
+  text-align: center;
+  color: black;
+  &__title {
+    font-family: $third-font;
+    font-size: 2.4rem;
+  }
+  &__caption {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 2.5rem;
+    padding-bottom: 3.5rem;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -3px;
+      left: 0;
+      @include size(6rem, 3px);
+      background-color: $primary-color;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__desc {
+    font-family: $secondary-font;
+    color: #999;
+    line-height: 1.6;
+    margin-top: 4.5rem;
+    padding-bottom: 9.5rem;
+  }
+}
