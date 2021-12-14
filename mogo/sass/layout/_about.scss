@@ -4,7 +4,7 @@
     @include flex(space-between);
   }
   &__item {
-    width: calc(100% / 3 - 3rem);
+    width: calc(100% / 3 - 2rem);
     position: relative;
     cursor: pointer;
     transition: 0.25s ease;
