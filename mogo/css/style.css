@@ -21,7 +21,7 @@ a {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 .wrapper {
@@ -360,6 +360,69 @@ img {
   margin-top: 2rem;
   color: #999;
   line-height: 1.6;
+}
+
+.device {
+  padding-top: 11rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/bg-device.jpg") center/cover no-repeat;
+  width: 100%;
+  height: 85rem;
+  position: relative;
+}
+.device__tablet {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.device__mobile {
+  position: absolute;
+  content: "";
+  left: 68%;
+  bottom: -11%;
+  transform: translateX(-50%);
+}
+
+.service {
+  padding: 11rem 0;
+}
+.service__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.service__left, .service__right {
+  width: calc(50% - 1.5rem);
+}
+.service__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 1.5rem;
+  border: 1px solid #e5e5e5;
+}
+.service__title {
+  margin-left: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.4rem;
+}
+.service__icondown {
+  margin-left: auto;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.service__content {
+  padding: 2rem;
+  margin: 0;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=style.css.map */
