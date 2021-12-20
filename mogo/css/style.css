@@ -396,6 +396,26 @@ img {
 }
 .service__left, .service__right {
   width: calc(50% - 1.5rem);
+  height: 38rem;
+}
+.service__right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.service__item {
+  height: 6rem;
+}
+.service__item--active {
+  height: auto;
+}
+.service__item--active .service-content {
+  opacity: 1;
+  visibility: visible;
+}
+.service__image {
+  width: 100%;
+  height: 100%;
 }
 .service__row {
   display: flex;
@@ -417,12 +437,40 @@ img {
   font-size: 2rem;
   cursor: pointer;
 }
-.service__content {
-  padding: 2rem;
-  margin: 0;
+.service-content {
+  padding: 1.4rem;
   border: 1px solid #e5e5e5;
   border-top: none;
-  line-height: 1.5;
+  opacity: 0;
+  visibility: hidden;
+}
+.service-content__main {
+  margin: 0;
+  padding-right: 2rem;
+  max-height: 18rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+.service-content__main::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+.service-content__main::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.service-content__main::-webkit-scrollbar-thumb {
+  background: #95e1d3;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, transparent 75%, transparent);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
