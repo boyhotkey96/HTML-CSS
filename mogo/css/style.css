@@ -473,4 +473,70 @@ img {
   border-radius: 10px;
 }
 
+.slider {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+}
+.slider__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.slider__icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.slider__icon--left {
+  margin-left: 2rem;
+  margin-right: 7.5rem;
+}
+.slider__icon--right {
+  margin-left: 7.5rem;
+  margin-right: 2.5rem;
+}
+.slider__iconmessage {
+  font-size: 6.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 14.5rem;
+  height: 14.5rem;
+  color: #95e1d3;
+  border: 3px solid #95e1d3;
+  padding: 4rem;
+}
+.slider__content {
+  margin-left: 6rem;
+}
+.slider__text {
+  font-size: 2.2rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+.slider__author {
+  padding-left: 7rem;
+  font-family: "Kaushan Script", cursive;
+  color: black;
+  font-size: 2.4rem;
+  margin: 0;
+  position: relative;
+}
+.slider__author::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 3px;
+  background-color: #e98383;
+}
+
 /*# sourceMappingURL=style.css.map */
