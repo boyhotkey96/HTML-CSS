@@ -1,0 +1,13 @@
+.logo {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+  &__list {
+    @include flex(space-between, center);
+  }
+  &__item {
+    @include size(15rem);
+  }
+  &__image {
+    width: 100%;
+  }
+}

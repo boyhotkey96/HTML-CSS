@@ -657,4 +657,23 @@ img {
   transition: 0.25s ease;
 }
 
+.logo {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+}
+.logo__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.logo__item {
+  width: 15rem;
+  height: 15rem;
+}
+.logo__image {
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */
