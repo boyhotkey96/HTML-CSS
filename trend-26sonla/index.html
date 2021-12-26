@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>77 Bình Định chào anh em nha!</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <video id="clip" height="540">
+        <source src="./srs/sonla.mp4" type="video/mp4" />
+      </video>
+      <div class="effect">
+        <canvas id="canv"></canvas>
+        <div id="overlay"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="./js/effect.js"></script>
+<script>
+  audio = new Audio();
+  audio.src = "./srs/sonla.mp4";
+  analyser = null;
+  document.onclick = () => {
+    context = new AudioContext();
+    analyser = context.createAnalyser();
+    context.createMediaElementSource(audio).connect(analyser);
+    analyser.connect(context.destination);
+    audio.play();
+    var sonla = document.getElementById("clip");
+    sonla.autoplay = true;
+    sonla.load();
+    loop();
+  };
+
+  function loop() {
+    window.requestAnimationFrame(loop);
+    fbc = new Uint8Array(analyser.frequencyBinCount);
+    analyser.getByteFrequencyData(fbc);
+    avg = fbc.reduce((a, b) => a + b, 0) / fbc.length;
+    document.getElementById("clip").style.width = avg * 10 + "px";
+    document.getElementById("clip").style.height = avg * 10 + "px";
+    var shadow = avg - 30;
+    document.getElementById("clip").style.boxShadow =
+      "0 " + "0 " + shadow + "px " + shadow + "px " + "blue";
+    document.getElementById("overlay").style.opacity = avg / 100;
+    document.getElementById("overlay").style.backgroundColor =
+      "rgb(" + avg + "," + avg + "," + avg + ")";
+  }
+</script>
