@@ -1,31 +1,49 @@
 .overview {
   background-color: $third-color;
   color: #fff;
-  &__list {
-    height: 27rem;
-    display: flex;
-  }
   &__item {
-    width: 20%;
-    height: 100%;
     @include flex(center, center, null, column);
-    border-left: 2px solid #b5eae0;
-    &:last-child {
-      border-right: 2px solid #b5eae0;
+    padding: 2rem 0;
+    text-align: center;
+    &:not(:last-child) {
+      border-bottom: 1px solid #b5eae0;
     }
     span:first-child {
-      font-size: 7.2rem;
+      font-size: 4.2rem;
       font-weight: bold;
       transition: 0.25s ease-in-out;
-      &:hover {
-        color: $secondary-color;
-        cursor: pointer;
-      }
     }
     span:last-child {
       font-size: 1.4rem;
       text-transform: uppercase;
       margin-top: 2rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &__container {
+      display: flex;
+    }
+    &__item {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      width: 20%;
+      border-left: 2px solid #b5eae0;
+      span:first-child {
+        font-size: 7.2rem;
+        cursor: pointer;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+      &:last-child {
+        border-right: 2px solid #b5eae0;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    &__item {
+      margin-left: -2rem;
+      margin-right: -2rem;
     }
   }
 }

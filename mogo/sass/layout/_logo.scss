@@ -10,4 +10,14 @@
   &__image {
     width: 100%;
   }
+  @media screen and (max-width: 1023px) {
+    &__item {
+      @include size(12rem);
+    }
+  }
+  @media screen and (max-width: 319px) {
+    &__list {
+      justify-content: center;
+    }
+  }
 }

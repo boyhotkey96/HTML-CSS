@@ -28,7 +28,7 @@ Set.partitions = function(display, img, scale) {
 };
 
 var opts = {
-  imgURL: './img/thoan.jpeg',
+  imgURL: 'https://lh3.googleusercontent.com/SC_FPBpkbn6oeIbqfxOFOHy0p_MSYYLOm_P1Pni2BnZ4MMb53yX-72uuvnu_gkg4H8x9bOV17iif4reUEVXTRXBUD8uHKydz9Drl0AqSH6FDL8K5qD7fnwAL6UUszHrJcc71FY_yzjkGDvGAxM8f56io1RCoCxwfBkmY0j5iRED9f32VG1HAWZVnD6R3cv_S_7y51yaGfgyjxfSZ6ZZlO61A4QPuX_qS4Lc41xDU2sz48wobdSoGKh_Xl_joka40MQ_dOm08eGjLx9ldBYuvlMI3fnJ-SeR73egJCKZG5Zz1124-FrTqJRMcFJ1-Kws42fY6m119iHrEAX6Qsh5CycJS7oYivBNtX-Omu3uWZCxNNpebS_-QZkvbIjP8Tnkjn1smLB3NqMIontsv7smEFOWQcmR3OTtXi9PNQmYdr4Np6i6igCX-Aa48gQoXIg0Xiz5R7vQ9r_DKn2G-TtNV1zYOZc3Q4iwMeyb_kYyZQazRo0r2CoyAmfJrfNRBE0r4JH3HJHjDdhCu5Ze5BqCU0SbGPFqOaeGkgNf7Z25lFTZln6owMJrm-gczgbymGfGQmyqJ8D6ZjoxglvEZEYK0sGWInJvQHyYjzU2DqszwqUxXgs1pgbhr4Z1n0sTh_XTTb5T_HGECzVO69VIuAZDIn_QLA6BIZjtELWXTUpy0OYbdolqL6TLSZEquuchcK5i9iQ6zD-D5aCm7fda1p55RrKNt=w629-h1117-no?authuser=0',
   speed: 0.002,
   segmentSize: 200,
   smoothing: 0.1,

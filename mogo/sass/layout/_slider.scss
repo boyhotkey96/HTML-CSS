@@ -2,7 +2,7 @@
   padding: 5rem 0;
   background-color: #f8f8f8;
   &__container {
-    @include flex(space-between, center);
+    @include flex(space-between, center, nowrap);
   }
   &__icon {
     font-size: 3rem;
