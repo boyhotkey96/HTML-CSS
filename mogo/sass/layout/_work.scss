@@ -1,0 +1,76 @@
+.work {
+  padding-top: 9rem;
+  --column: 4;
+  &__list {
+    @include flex(null, stretch, wrap);
+    height: 78rem;
+  }
+  &__column {
+    width: calc(100% / var(--column));
+    height: 100%;
+  }
+  &__item {
+    height: 50%;
+    cursor: pointer;
+    position: relative;
+    &--full {
+      height: 100%;
+    }
+    &:hover .work-content {
+      @include show();
+    }
+  }
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-content {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.9),
+      rgba($secondary-color, 0.9)
+    );
+    color: #fff;
+    transition: 0.25s ease-out;
+    @include flex(center, center, null, column);
+    @include hide();
+    &__icon {
+      font-size: 3.5rem;
+    }
+    &__title {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+    &__desc {
+      font-style: italic;
+      opacity: 0.7;
+    }
+  }
+  @media screen and (max-width: 1279px) {
+    &__list {
+      height: 62rem;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    padding-top: 6rem;
+    &__list {
+      height: 78rem;
+    }
+    &__column {
+      --column: 2;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    &__column {
+      width: 100%;
+    }
+  }
+}

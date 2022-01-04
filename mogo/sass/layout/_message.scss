@@ -1,8 +1,8 @@
-.slider {
+.message {
   padding: 5rem 0;
   background-color: #f8f8f8;
   &__container {
-    @include flex(space-between, center, nowrap);
+    @include flex(space-between, stretch, nowrap);
   }
   &__icon {
     font-size: 3rem;
@@ -25,6 +25,8 @@
     }
   }
   &__content {
+    @include flex(space-between, null, nowrap, column);
+    flex-grow: 1;
     margin-left: 6rem;
   }
   &__text {
@@ -33,7 +35,12 @@
     font-style: italic;
     line-height: 1.5;
     margin: 0;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__author {
     padding-left: 7rem;

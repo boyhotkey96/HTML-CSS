@@ -576,30 +576,30 @@ img {
   }
 }
 
-.slider {
+.message {
   padding: 5rem 0;
   background-color: #f8f8f8;
 }
-.slider__container {
+.message__container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: nowrap;
   flex-direction: row;
 }
-.slider__icon {
+.message__icon {
   font-size: 3rem;
   cursor: pointer;
 }
-.slider__icon--left {
+.message__icon--left {
   margin-left: 2rem;
   margin-right: 7.5rem;
 }
-.slider__icon--right {
+.message__icon--right {
   margin-left: 7.5rem;
   margin-right: 2.5rem;
 }
-.slider__iconmessage {
+.message__iconmessage {
   font-size: 6.5rem;
   display: flex;
   justify-content: center;
@@ -612,18 +612,28 @@ img {
   border: 3px solid #95e1d3;
   padding: 4rem;
 }
-.slider__content {
+.message__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-grow: 1;
   margin-left: 6rem;
 }
-.slider__text {
+.message__text {
   font-size: 2.2rem;
   font-family: "Roboto", sans-serif;
   font-style: italic;
   line-height: 1.5;
   margin: 0;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.slider__author {
+.message__author {
   padding-left: 7rem;
   font-family: "Kaushan Script", cursive;
   color: black;
@@ -631,7 +641,7 @@ img {
   margin: 0;
   position: relative;
 }
-.slider__author::after {
+.message__author::after {
   position: absolute;
   content: "";
   left: 0;
@@ -818,6 +828,155 @@ img {
   .logo__list {
     justify-content: center;
   }
+}
+
+.work {
+  padding-top: 9rem;
+  --column: 4;
+}
+.work__list {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 78rem;
+}
+.work__column {
+  width: calc(100% / var(--column));
+  height: 100%;
+}
+.work__item {
+  height: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.work__item--full {
+  height: 100%;
+}
+.work__item:hover .work-content {
+  visibility: visible;
+  opacity: 1;
+}
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work-content {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(233, 131, 131, 0.9), rgba(237, 214, 136, 0.9));
+  color: #fff;
+  transition: 0.25s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+}
+.work-content__icon {
+  font-size: 3.5rem;
+}
+.work-content__title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+.work-content__desc {
+  font-style: italic;
+  opacity: 0.7;
+}
+@media screen and (max-width: 1279px) {
+  .work__list {
+    height: 62rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .work {
+    padding-top: 6rem;
+  }
+  .work__list {
+    height: 78rem;
+  }
+  .work__column {
+    --column: 2;
+  }
+}
+@media screen and (max-width: 767px) {
+  .work__column {
+    width: 100%;
+  }
+}
+
+.quote {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+}
+.quote__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.quote__icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.quote__icon--left {
+  margin-left: 2rem;
+  margin-right: 7.5rem;
+}
+.quote__icon--right {
+  margin-left: 7.5rem;
+  margin-right: 2.5rem;
+}
+.quote__iconmessage {
+  font-size: 6.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 14.5rem;
+  height: 14.5rem;
+  color: #95e1d3;
+  border: 3px solid #95e1d3;
+  padding: 4rem;
+}
+.quote__content {
+  margin-left: 6rem;
+}
+.quote__text {
+  font-size: 2.2rem;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+.quote__author {
+  padding-left: 7rem;
+  font-family: "Kaushan Script", cursive;
+  color: black;
+  font-size: 2.4rem;
+  margin: 0;
+  position: relative;
+}
+.quote__author::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6rem;
+  height: 3px;
+  background-color: #e98383;
 }
 
 /*# sourceMappingURL=style.css.map */

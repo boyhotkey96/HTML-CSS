@@ -1,0 +1,55 @@
+.quote {
+  padding: 5rem 0;
+  background-color: #f8f8f8;
+  &__container {
+    @include flex(space-between, center, nowrap);
+  }
+  &__icon {
+    font-size: 3rem;
+    cursor: pointer;
+    &--left {
+      margin-left: 2rem;
+      margin-right: 7.5rem;
+    }
+    &--right {
+      margin-left: 7.5rem;
+      margin-right: 2.5rem;
+    }
+    &message {
+      font-size: 6.5rem;
+      @include flex(center, center);
+      @include size(14.5rem);
+      color: $third-color;
+      border: 3px solid $third-color;
+      padding: 4rem;
+    }
+  }
+  &__content {
+    margin-left: 6rem;
+  }
+  &__text {
+    font-size: 2.2rem;
+    font-family: $secondary-font;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+  &__author {
+    padding-left: 7rem;
+    font-family: $third-font;
+    color: black;
+    font-size: 2.4rem;
+    margin: 0;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      @include size(6rem, 3px);
+      background-color: $primary-color;
+    }
+  }
+}
