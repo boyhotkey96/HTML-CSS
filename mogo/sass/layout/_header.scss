@@ -4,12 +4,12 @@
       rgba($primary-color, 0.8),
       rgba($secondary-color, 0.8)
     ),
-    url("../images/header-bg.jpg");
+    url("../images/header-bg.jpg") no-repeat center / cover;
   width: 100%;
   padding: 2.5rem 0;
   color: #fff;
   &__top {
-    @include flex(space-between);
+    @include flex(space-between, baseline);
     line-height: 1;
   }
   &__logo {
@@ -101,8 +101,12 @@
   }
 }
 .menu {
+  &__bar {
+    display: none;
+    cursor: pointer;
+  }
   &__list {
-    @include flex();
+    @include flex(null, baseline, nowrap);
   }
   &__item {
     margin-left: 5.5rem;
@@ -114,17 +118,18 @@
     font-size: 1.4rem;
     transition: all 0.25s ease;
     font-weight: 400;
-    &--effect {
+    padding-bottom: 2rem;
+    &--text {
       position: relative;
       &::after {
         position: absolute;
         content: "";
         left: 50%;
-        bottom: -2rem;
+        bottom: 0;
         @include size(0, 3px);
         transform: translateX(-50%);
         background-color: $secondary-color;
-        transition: all 0.25s ease;
+        transition: all 0.25s ease-out;
       }
       &:hover::after {
         width: 100%;
@@ -133,12 +138,83 @@
     &:hover {
       color: $secondary-color;
     }
-  }
-  i {
-    font-size: 2rem;
-    transition: transform 0.25s ease;
-    &:hover {
-      transform: translateY(-3px);
+    &--icon {
+      & i {
+        font-size: 1.8rem;
+        transition: transform 0.25s ease;
+        &:hover {
+          transform: translateY(-3px);
+        }
+      }
     }
+  }
+}
+@media screen and (max-width: 1023px) {
+  .header {
+    &__caption {
+      font-size: 12rem;
+    }
+  }
+  .menu {
+    &__item {
+      margin-left: 3.5rem;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    &__caption {
+      font-size: 6rem;
+    }
+  }
+  .menu {
+    &__bar {
+      display: block;
+    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 10;
+    background-color: #4c4c4c;
+    transform: translateX(100%);
+    transition: 0.25s ease-out;
+    &__list {
+      flex-direction: column;
+    }
+    &__item {
+      margin-left: 0;
+      width: 100%;
+    }
+    &__link {
+      display: block;
+      padding: 2rem 2.4rem;
+      &--icon {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          left: 50%;
+          bottom: 0;
+          @include size(0, 3px);
+          transform: translateX(-50%);
+          background-color: $secondary-color;
+          transition: all 0.25s ease;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        & i:hover {
+          transform: unset;
+        }
+      }
+    }
+    &__bar {
+      font-size: 2rem;
+    }
+  }
+  .is-open {
+    transform: translateX(0%);
   }
 }

@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -75,7 +76,7 @@ img {
 }
 
 .header {
-  background: linear-gradient(to bottom, rgba(233, 131, 131, 0.8), rgba(237, 214, 136, 0.8)), url("../images/header-bg.jpg");
+  background: linear-gradient(to bottom, rgba(233, 131, 131, 0.8), rgba(237, 214, 136, 0.8)), url("../images/header-bg.jpg") no-repeat center/cover;
   width: 100%;
   padding: 2.5rem 0;
   color: #fff;
@@ -83,7 +84,7 @@ img {
 .header__top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   flex-wrap: wrap;
   flex-direction: row;
   line-height: 1;
@@ -179,11 +180,14 @@ img {
   min-height: 100rem;
 }
 
+.menu__bar {
+  display: none;
+  cursor: pointer;
+}
 .menu__list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: baseline;
+  flex-wrap: nowrap;
   flex-direction: row;
 }
 .menu__item {
@@ -196,35 +200,103 @@ img {
   font-size: 1.4rem;
   transition: all 0.25s ease;
   font-weight: 400;
+  padding-bottom: 2rem;
 }
-.menu__link--effect {
+.menu__link--text {
   position: relative;
 }
-.menu__link--effect::after {
+.menu__link--text::after {
   position: absolute;
   content: "";
   left: 50%;
-  bottom: -2rem;
+  bottom: 0;
   width: 0;
   height: 3px;
   transform: translateX(-50%);
   background-color: #edd688;
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-out;
 }
-.menu__link--effect:hover::after {
+.menu__link--text:hover::after {
   width: 100%;
 }
 .menu__link:hover {
   color: #edd688;
 }
-.menu i {
-  font-size: 2rem;
+.menu__link--icon i {
+  font-size: 1.8rem;
   transition: transform 0.25s ease;
 }
-.menu i:hover {
+.menu__link--icon i:hover {
   transform: translateY(-3px);
 }
 
+@media screen and (max-width: 1023px) {
+  .header__caption {
+    font-size: 12rem;
+  }
+
+  .menu__item {
+    margin-left: 3.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__caption {
+    font-size: 6rem;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 10;
+    background-color: #4c4c4c;
+    transform: translateX(100%);
+    transition: 0.25s ease-out;
+  }
+  .menu__bar {
+    display: block;
+  }
+  .menu__list {
+    flex-direction: column;
+  }
+  .menu__item {
+    margin-left: 0;
+    width: 100%;
+  }
+  .menu__link {
+    display: block;
+    padding: 2rem 2.4rem;
+  }
+  .menu__link--icon {
+    position: relative;
+  }
+  .menu__link--icon::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    transform: translateX(-50%);
+    background-color: #edd688;
+    transition: all 0.25s ease;
+  }
+  .menu__link--icon:hover::after {
+    width: 100%;
+  }
+  .menu__link--icon i:hover {
+    transform: unset;
+  }
+  .menu__bar {
+    font-size: 2rem;
+  }
+
+  .is-open {
+    transform: translateX(0%);
+  }
+}
 .about {
   padding: 9rem 0 11rem;
 }
@@ -579,6 +651,8 @@ img {
 .message {
   padding: 5rem 0;
   background-color: #f8f8f8;
+  --marginInsideIcon: 5.5rem;
+  --marginOutsideIcon: 2.5rem;
 }
 .message__container {
   display: flex;
@@ -587,24 +661,27 @@ img {
   flex-wrap: nowrap;
   flex-direction: row;
 }
+.message__item {
+  padding: 0 2rem;
+}
 .message__icon {
   font-size: 3rem;
   cursor: pointer;
 }
 .message__icon--left {
-  margin-left: 2rem;
-  margin-right: 7.5rem;
+  margin-left: var(--marginOutsideIcon);
+  margin-right: var(--marginInsideIcon);
 }
 .message__icon--right {
-  margin-left: 7.5rem;
-  margin-right: 2.5rem;
+  margin-left: var(--marginInsideIcon);
+  margin-right: var(--marginOutsideIcon);
 }
 .message__iconmessage {
   font-size: 6.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
   width: 14.5rem;
   height: 14.5rem;
@@ -650,6 +727,54 @@ img {
   width: 6rem;
   height: 3px;
   background-color: #e98383;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .message {
+    --marginInsideIcon: 3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .message {
+    --marginInsideIcon: 0.5rem;
+    --marginOutsideIcon: 2rem;
+  }
+  .message__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .message__iconmessage {
+    width: 10rem;
+    height: 10rem;
+    font-size: 5.5rem;
+  }
+  .message__content {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .message__text {
+    font-size: 1.6rem;
+  }
+  .message__author {
+    padding-left: 5rem;
+    font-size: 1.8rem;
+  }
+  .message__author::after {
+    width: 4rem;
+  }
+}
+
+.slick-initialized.slick-slider {
+  display: flex;
+  align-items: center;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+}
+
+.slick-disabled {
+  cursor: not-allowed;
 }
 
 .team {

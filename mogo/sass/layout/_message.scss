@@ -1,23 +1,28 @@
 .message {
   padding: 5rem 0;
   background-color: #f8f8f8;
+  --marginInsideIcon: 5.5rem;
+  --marginOutsideIcon: 2.5rem;
   &__container {
     @include flex(space-between, stretch, nowrap);
+  }
+  &__item {
+    padding: 0 2rem;
   }
   &__icon {
     font-size: 3rem;
     cursor: pointer;
     &--left {
-      margin-left: 2rem;
-      margin-right: 7.5rem;
+      margin-left: var(--marginOutsideIcon);
+      margin-right: var(--marginInsideIcon);
     }
     &--right {
-      margin-left: 7.5rem;
-      margin-right: 2.5rem;
+      margin-left: var(--marginInsideIcon);
+      margin-right: var(--marginOutsideIcon);
     }
     &message {
       font-size: 6.5rem;
-      @include flex(center, center);
+      @include flex(center, center, nowrap);
       @include size(14.5rem);
       color: $third-color;
       border: 3px solid $third-color;
@@ -59,4 +64,43 @@
       background-color: $primary-color;
     }
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    --marginInsideIcon: 3rem;
+  }
+  @media screen and (max-width: 767px) {
+    --marginInsideIcon: 0.5rem;
+    --marginOutsideIcon: 2rem;
+    &__item {
+      @include flex(null, center, null, column);
+    }
+    &__iconmessage {
+      @include size(10rem);
+      font-size: 5.5rem;
+    }
+    &__content {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+    &__text {
+      font-size: 1.6rem;
+    }
+    &__author {
+      padding-left: 5rem;
+      font-size: 1.8rem;
+      &::after {
+        width: 4rem;
+      }
+    }
+  }
+}
+
+.slick-initialized.slick-slider {
+  display: flex;
+  align-items: center;
+}
+.slick-initialized .slick-slide {
+  display: flex;
+}
+.slick-disabled {
+  cursor: not-allowed;
 }
