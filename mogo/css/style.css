@@ -144,15 +144,15 @@ img {
 .header-pagination {
   margin-top: auto;
   display: flex;
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .header-pagination__item {
-  width: 25%;
+  width: calc(25% - 2.5rem);
   padding-top: 2.5rem;
   border-top: 3px solid #fff;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 .header-pagination__item span:first-child {
   font-size: 2.4rem;
@@ -240,8 +240,31 @@ img {
   }
 }
 @media screen and (max-width: 767px) {
+  .header__container {
+    min-height: unset;
+  }
+  .header__content {
+    margin: 5rem 0;
+  }
   .header__caption {
-    font-size: 6rem;
+    font-size: 5rem;
+  }
+  .header-pagination {
+    margin-top: unset;
+  }
+  .header-pagination__item {
+    width: calc(25% - 1.25rem);
+  }
+  .header-pagination__item span:first-child {
+    width: 100%;
+    display: inline-block;
+    font-size: 2.2rem;
+  }
+  .header-pagination__item span:last-child {
+    font-size: 1.3rem;
+  }
+  .header-pagination__item.active::before {
+    width: 3rem;
   }
 
   .menu {
@@ -297,6 +320,11 @@ img {
     transform: translateX(0%);
   }
 }
+@media screen and (max-width: 374px) {
+  .header-pagination__item span:last-child {
+    font-size: 1rem;
+  }
+}
 .about {
   padding: 9rem 0 11rem;
 }
@@ -337,6 +365,7 @@ img {
 .about__image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .about-overlay {
   position: absolute;

@@ -65,15 +65,11 @@
   }
   &-pagination {
     margin-top: auto;
-    display: flex;
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
+    @include flex(space-between);
     &__item {
-      width: 25%;
+      width: calc(100% / 4 - 2.5rem);
       padding-top: 2.5rem;
       border-top: 3px solid #fff;
-      margin-left: 1.25rem;
-      margin-right: 1.25rem;
       span:first-child {
         font-size: 2.4rem;
         font-weight: bold;
@@ -163,8 +159,33 @@
 }
 @media screen and (max-width: 767px) {
   .header {
+    &__container {
+      min-height: unset;
+    }
+    &__content {
+      margin: 5rem 0;
+    }
     &__caption {
-      font-size: 6rem;
+      font-size: 5rem;
+    }
+    &-pagination {
+      margin-top: unset;
+      &__item {
+        width: calc(100% / 4 - 1.25rem);
+        span:first-child {
+          width: 100%;
+          display: inline-block;
+          font-size: 2.2rem;
+        }
+        span:last-child {
+          font-size: 1.3rem;
+        }
+        &.active {
+          &::before {
+            width: 3rem;
+          }
+        }
+      }
     }
   }
   .menu {
@@ -216,5 +237,16 @@
   }
   .is-open {
     transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 374px) {
+  .header {
+    &-pagination {
+      &__item {
+        span:last-child {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
