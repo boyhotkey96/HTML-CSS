@@ -3,11 +3,10 @@
   --column: 4;
   &__list {
     @include flex(null, stretch, wrap);
-    height: 78rem;
   }
   &__column {
     width: calc(100% / var(--column));
-    height: 100%;
+    height: 78rem;
   }
   &__item {
     height: 50%;
@@ -55,13 +54,13 @@
     }
   }
   @media screen and (max-width: 1279px) {
-    &__list {
+    &__column {
       height: 62rem;
     }
   }
   @media screen and (max-width: 1023px) {
     padding-top: 6rem;
-    &__list {
+    &__column {
       height: 78rem;
     }
     &__column {
