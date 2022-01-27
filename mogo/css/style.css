@@ -1162,7 +1162,6 @@ img {
 .client-info__name {
   color: #333;
   font-size: 1.4rem;
-  font-weight: bold;
   text-transform: uppercase;
 }
 .client-info__job {
@@ -1190,6 +1189,110 @@ img {
 @media screen and (max-width: 767px) {
   .client__item {
     width: 100%;
+  }
+}
+
+.stories {
+  padding: 11rem 0;
+}
+.stories__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.stories__item {
+  width: calc(33.3333333333% - 2rem);
+  margin-bottom: 1rem;
+}
+.stories__feature {
+  position: relative;
+}
+.stories__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stories-times {
+  position: absolute;
+  content: "";
+  left: -1rem;
+  bottom: 1rem;
+  background-color: #95e1d3;
+  width: 6rem;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.stories-times__date, .stories-times__month {
+  display: block;
+  color: white;
+}
+.stories-times__date {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.stories-times__month {
+  font-style: italic;
+}
+.stories__title {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #333;
+  text-transform: uppercase;
+}
+.stories__desc {
+  font-family: "Roboto", sans-serif;
+  margin-top: 1.4rem;
+  color: #999;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.stories-analytic {
+  border-top: 1px solid #ccc;
+  padding-top: 2rem;
+}
+.stories-analytic__icon {
+  font-size: 1.7rem;
+  color: #95e1d3;
+  margin-right: 0.5rem;
+}
+.stories-analytic span {
+  margin-right: 2rem;
+  color: #999;
+  font-style: italic;
+}
+@media screen and (max-width: 1279px) {
+  .stories__desc {
+    height: 7.7rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .stories__title {
+    height: 4rem;
+    line-height: 1.5;
+  }
+  .stories__desc {
+    height: unset;
+  }
+}
+@media screen and (max-width: 767px) {
+  .stories {
+    padding: 6rem 0;
+  }
+  .stories__item {
+    width: 100%;
+  }
+  .stories__item:not(:first-child) {
+    margin-top: 3rem;
+  }
+  .stories__title {
+    height: unset;
+    line-height: unset;
   }
 }
 

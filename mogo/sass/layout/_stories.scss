@@ -1,0 +1,100 @@
+.stories {
+  padding: 11rem 0;
+  &__list {
+    @include flex(space-between, stretch);
+    margin-top: 5rem;
+  }
+  &__item {
+    width: calc(100% / 3 - 2rem);
+    margin-bottom: 1rem;
+  }
+  &__feature {
+    position: relative;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-times {
+    position: absolute;
+    content: "";
+    left: -1rem;
+    bottom: 1rem;
+    background-color: $third-color;
+    @include size(6rem, 7rem);
+    @include flex(center, center, null, column);
+    &__date,
+    &__month {
+      display: block;
+      color: white;
+    }
+    &__date {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    &__month {
+      font-style: italic;
+    }
+  }
+  &__title {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #333;
+    text-transform: uppercase;
+  }
+  &__desc {
+    font-family: $secondary-font;
+    margin-top: 1.4rem;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  &-analytic {
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+    &__icon {
+      font-size: 1.7rem;
+      color: $third-color;
+      margin-right: 0.5rem;
+    }
+    span {
+      margin-right: 2rem;
+      color: #999;
+      font-style: italic;
+    }
+  }
+  @media screen and (max-width: 1279px) {
+    &__desc {
+      // display: block;
+      // display: -webkit-box;
+      // -webkit-box-orient: vertical;
+      // -webkit-line-clamp: 2;
+      // text-overflow: ellipsis;
+      // overflow: hidden;
+      height: 7.7rem;
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    &__title {
+      height: 4rem;
+      line-height: 1.5;
+    }
+    &__desc {
+      height: unset;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding: 6rem 0;
+    &__item {
+      width: 100%;
+      &:not(:first-child) {
+        margin-top: 3rem;
+      }
+    }
+    &__title {
+      height: unset;
+      line-height: unset;
+    }
+  }
+}
