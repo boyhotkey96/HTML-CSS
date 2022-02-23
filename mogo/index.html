@@ -642,21 +642,49 @@
           </div>
         </div>
       </section>
-      <!-- <section class="quote">
+      <section class="quote">
         <div class="container quote__container">
-          <i class="fas fa-chevron-left quote__icon quote__icon--left"></i>
-          <i class="fas fa-comments quote__iconmessage"></i>
-          <div class="quote__content">
-            <p class="quote__text">
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation.”
-            </p>
-            <p class="quote__author">Jon Doe</p>
+          <div class="quote__item">
+            <div class="quote__iconImage">
+              <img src="./images/quote.jpeg" alt="quote" />
+            </div>
+            <div class="quote__content">
+              <p class="quote__text">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation.”
+              </p>
+              <p class="quote__author">Joshua Earle</p>
+            </div>
           </div>
-          <i class="fas fa-chevron-right quote__icon quote__icon--right"></i>
+          <div class="quote__item">
+            <div class="quote__iconImage">
+              <img src="./images/quote.jpeg" alt="quote" />
+            </div>
+            <div class="quote__content">
+              <p class="quote__text">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation.”
+              </p>
+              <p class="quote__author">Joshua Earle</p>
+            </div>
+          </div>
+          <div class="quote__item">
+            <div class="quote__iconImage">
+              <img src="./images/quote.jpeg" alt="quote" />
+            </div>
+            <div class="quote__content">
+              <p class="quote__text">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation.”
+              </p>
+              <p class="quote__author">Joshua Earle</p>
+            </div>
+          </div>
         </div>
-      </section> -->
+      </section>
       <section class="client">
         <div class="container">
           <div class="box">
@@ -804,9 +832,7 @@
         </div>
       </section>
       <section class="footer">
-        <div class="container">
-          
-        </div>
+        <div class="container"></div>
       </section>
     </div>
     <script src="./js/menu.js"></script>
@@ -822,6 +848,20 @@
     <script type="text/javascript">
       $(document).ready(function () {
         $(".message__container").slick({
+          autoplay: true,
+          infinite: false,
+          autoplaySpeed: 2000,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrow: true,
+          cssEase: "linear",
+          prevArrow: `<i class="fas fa-chevron-left message__icon message__icon--left"></i>`,
+          nextArrow: `<i
+            class="fas fa-chevron-right message__icon message__icon--right"
+          ></i>`,
+        });
+        $(".quote__container").slick({
           autoplay: true,
           infinite: false,
           autoplaySpeed: 2000,

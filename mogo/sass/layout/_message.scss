@@ -94,12 +94,13 @@
   }
 }
 
-.slick-initialized.slick-slider {
-  display: flex;
-  align-items: center;
-}
+// .slick-initialized.slick-slider {
+//   display: flex;
+//   align-items: center;
+// }
 .slick-initialized .slick-slide {
   display: flex;
+  align-items: center;
 }
 .slick-disabled {
   cursor: not-allowed;

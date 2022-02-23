@@ -793,13 +793,9 @@ img {
   }
 }
 
-.slick-initialized.slick-slider {
-  display: flex;
-  align-items: center;
-}
-
 .slick-initialized .slick-slide {
   display: flex;
+  align-items: center;
 }
 
 .slick-disabled {
@@ -1067,8 +1063,10 @@ img {
 }
 
 .quote {
-  padding: 5rem 0;
+  padding: 10rem 0 13rem;
   background-color: #f8f8f8;
+  --marginInsideIcon: 5.5rem;
+  --marginOutsideIcon: 2.5rem;
 }
 .quote__container {
   display: flex;
@@ -1077,32 +1075,39 @@ img {
   flex-wrap: nowrap;
   flex-direction: row;
 }
+.quote__item {
+  padding: 0 2rem;
+}
 .quote__icon {
   font-size: 3rem;
   cursor: pointer;
 }
 .quote__icon--left {
-  margin-left: 2rem;
-  margin-right: 7.5rem;
+  margin-left: var(--marginOutsideIcon);
+  margin-right: var(--marginInsideIcon);
 }
 .quote__icon--right {
-  margin-left: 7.5rem;
-  margin-right: 2.5rem;
+  margin-left: var(--marginInsideIcon);
+  margin-right: var(--marginOutsideIcon);
 }
-.quote__iconmessage {
-  font-size: 6.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 14.5rem;
-  height: 14.5rem;
-  color: #95e1d3;
-  border: 3px solid #95e1d3;
-  padding: 4rem;
+.quote__iconImage {
+  width: 21rem;
+  height: 21rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.quote__iconImage > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .quote__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-grow: 1;
   margin-left: 6rem;
 }
 .quote__text {
@@ -1111,7 +1116,12 @@ img {
   font-style: italic;
   line-height: 1.5;
   margin: 0;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .quote__author {
   padding-left: 7rem;
@@ -1130,6 +1140,43 @@ img {
   width: 6rem;
   height: 3px;
   background-color: #e98383;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .quote {
+    --marginInsideIcon: 3rem;
+    padding: 8rem 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .quote {
+    --marginInsideIcon: 0.5rem;
+    --marginOutsideIcon: 2rem;
+    padding: 6rem 0;
+  }
+  .quote__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .quote__iconImage {
+    width: 10rem;
+    height: 10rem;
+    font-size: 5.5rem;
+  }
+  .quote__content {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .quote__text {
+    font-size: 1.6rem;
+  }
+  .quote__author {
+    padding-left: 5rem;
+    font-size: 1.8rem;
+  }
+  .quote__author::after {
+    width: 4rem;
+  }
 }
 
 .client {
