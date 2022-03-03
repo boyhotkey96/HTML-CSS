@@ -4,7 +4,7 @@
   --marginInsideIcon: 5.5rem;
   --marginOutsideIcon: 2.5rem;
   &__container {
-    @include flex(space-between, stretch, nowrap);
+    @include flex(space-between, center, nowrap);
   }
   &__item {
     padding: 0 2rem;
