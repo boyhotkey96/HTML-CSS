@@ -4,8 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mang nệm về cho mẹ @@</title>
+    <title>Happy Birthday!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./image/icon.png" type="image/x-icon" />
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    @font-face {
+      font-family: "s";
+      src: url("./fonts/TheScientistRegular.woff2") format("woff2"),
+        url("./fonts/TheScientistRegular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: fallback;
+    }
+    @font-face {
+      font-family: "g";
+      src: url("./fonts/Glysa-Medium.woff2") format("woff2"),
+        url("./fonts/Glysa-Medium.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: fallback;
+    }
+    .box__content::after {
+      position: absolute;
+      content: "";
+      width: 80%;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50px;
+      border: solid 1.5px #c6c8c9;
+    }
+  </style>
   <body
     style="
       height: 100vh;
@@ -15,41 +53,86 @@
       background-color: cornflowerblue;
     "
   >
-    <div class="box" style="position: relative">
-      <img src="./image/1c00d7d015f4d8aa81e5.jpeg" alt="" />
+    <div
+      class="wrapper"
+      style="
+        position: relative;
+        width: 650px;
+        height: 650px;
+        background: linear-gradient(
+            to bottom,
+            rgba(2, 2, 2, 0.4),
+            rgba(0, 0, 0, 0.9)
+          ),
+          url('https://lh3.googleusercontent.com/V5XMdXGG_y6ZxwIf-neOZQ_P2s2aJ7d5tyY4MYcb2akin40OzjYXkd8wpNT0yLC7js5rkGrFMHobT0GzhR5-M8-LD1OqKOQNU9obX7z6rbOal4pfS1LqIocHIokVcFjPpeXgViAMZ8MEzWCNq4jVwa9k5nBVqLJiJMsD_PBTQ49GbERAB1jcysv9IqK0YbylDhpdz5fhDzXv8Qu0Nvz1hsKTVwC7hf0yki17r-Ky3EHqpvObaQmy7gM8JjRBdWCZtYVcgO8U2awYmmPKXOdRsxeABFOCMWTNZHrb9OfxWs24sfrpjyukYXZX9mB8hmASs_xnUVTttA_Y6JxKLi44S7VKvEwMpdkE5s8mIxT4z6pbLYsOuTLeI3I5RZzxUObJDaecvZXxV4d4guy-_h_Wjvmc9W1RQ1Z8HD1duH8Q1kTBKiAFm-zqCYNPRvF2BbdTGRaGjWUIa1L37z5ivSScWgch0VQQMD3azmvggQM4dlY76LKy_d4Q2cWXOR1tbxs8kJIeHaK7-Xs12RlOmmxppCynTVekgFK9rlXaXVPLU3oDQvZmLRffjtnX3k8O_vGC0ppVAcpryDfPn1idQbCAN72rI0AZUjWUF8BLMzrl96WcWyR-IM8lRdq9zIJrb774Ip_DMjz6eZa-5rp0TTJUbEjWfx1MBjFItAxSNV05_-bK0MO5tPOu7VxHHGfI94iYibWO4nW5lNCZOvyR57kJxVvX=w922-h1410-no?authuser=0')
+            no-repeat top left / cover;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      "
+    >
       <div
-        class="box__content"
+        class="box__logo"
         style="
           position: absolute;
           content: '';
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(92, 91, 91, 0.4),
-            rgba(28, 25, 25, 0.75)
-          );
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
+          top: -10px;
+          right: -10px;
+          width: 170px;
         "
       >
-        <p
+        <!-- <img
+          src="./image/Rap_Việt_Vie_Channel.png"
+          alt=""
+          style="width: 100%; object-fit: cover"
+        /> -->
+      </div>
+
+      <div class="box__content" style="position: relative; margin-bottom: 50px; padding-bottom: 20px">
+        <div
           style="
-            color: #eb5b0d;
+            /* text-transform: uppercase; */
             font-weight: bold;
+            font-size: 55px;
             font-style: italic;
-            font-size: 54px;
-            padding-bottom: 20px;
-            border-bottom: 5px solid #fff;
-            width: 60%;
-            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 8px #ff0000;
+            line-height: 1.3;
           "
         >
-          Mang nệm về cho mẹ!
-        </p>
+          Tiền thì quá nhiều <br />mà chẳng có cuộc vui nào
+        </div>
+        <div class="box__text" style=""></div>
+          <p
+            style="
+              position: relative;
+              color: #eb5b0d;
+              font-size: 62px;
+              /* font-style: italic; */
+              /* letter-spacing: 5px; */
+              font-weight: bold;
+              font-family: 'g';
+              text-shadow: 2px 2px 8px #1f0101;
+            "
+          >
+          <!-- Cuộc vui thì quá nhiều <br />mà tiền thì không có -->
+          </p>
+          <p
+            class="box__text2"
+            style="
+              position: relative;
+              color: #eb5b0d;
+              font-size: 24px;
+              font-weight: bold;
+              font-family: 'g';
+              text-shadow: 2px 2px 8px #3c3c3c;
+            "
+          >
+            #boyhotkey96
+          </p>
+        </div>
       </div>
     </div>
   </body>
