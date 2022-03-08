@@ -109,7 +109,7 @@
 
 
 
-// Viết hàm để chuyển đối mảng thành object như bên dưới sử dụng reduce()
+// Viết hàm để chuyển đổi mảng thành object như bên dưới sử dụng reduce()
 // const itemList = [
 //   { id: 'key1', value: 'Superman' },
 //   { id: 'key2', value: 'Wonder Woman' },
@@ -198,7 +198,7 @@
 
 // var result2 = Object.values(input).reduce(function (previous, current, index, array) {
 //   var obj = {};
-//   obj.id = current,
+//   obj.id = index,
 //   obj.value = current
 //   previous.push(obj);
  
