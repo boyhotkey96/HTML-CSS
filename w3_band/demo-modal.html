@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Modal</title>
+    <script
+      src="https://kit.fontawesome.com/53812ef94f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <ul class="nav">
+          <li class="list-item"><a href="#">home</a></li>
+          <li class="list-item"><a href="#about">band</a></li>
+          <li class="list-item"><a href="#tour">tour</a></li>
+          <li class="list-item"><a href="#contact">contact</a></li>
+          <li class="list-item">
+            <a href="#"> more <i class="fas fa-caret-down"></i> </a>
+            <ul class="nav-sub">
+              <li class="list-itemsub"><a href="#">Merchandise</a></li>
+              <li class="list-itemsub"><a href="#">Extra</a></li>
+              <li class="list-itemsub"><a href="#">Media</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="search">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="menu-bar">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div id="slider">
+        <div class="text-content">
+          <div class="text-city">New York</div>
+          <p class="text-desc">The atmosphere in New York is lorem ipsum.</p>
+        </div>
+      </div>
+      <div id="about">
+        <div class="section-content">
+          <div class="content-title">the band</div>
+          <div class="content-titlesub">We love music</div>
+          <div class="about-desc">
+            We have created a fictional band website. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </div>
+          <div class="about-list">
+            <div class="about-item">
+              <p class="about-name">Name</p>
+              <img
+                src="./assets/images/bandmember.jpg"
+                alt=""
+                class="about-image"
+              />
+            </div>
+            <div class="about-item">
+              <p class="about-name">Name</p>
+              <img
+                src="./assets/images/bandmember.jpg"
+                alt=""
+                class="about-image"
+              />
+            </div>
+            <div class="about-item">
+              <p class="about-name">Name</p>
+              <img
+                src="./assets/images/bandmember.jpg"
+                alt=""
+                class="about-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tour">
+        <div class="section-content">
+          <div class="content-title">tour dates</div>
+          <div class="content-titlesub">Remember to book your tickets!</div>
+          <ul class="ticket-list">
+            <li class="ticket-item">
+              September <span class="sold-out">Sold out</span>
+            </li>
+            <li class="ticket-item">
+              October <span class="sold-out">Sold out</span>
+            </li>
+            <li class="ticket-item">
+              November <span class="quanlity">3</span>
+            </li>
+          </ul>
+          <div class="place-list">
+            <div class="place-item">
+              <img src="./assets/images/newyork.jpg" alt="" class="place-img" />
+              <div class="place-body">
+                <div class="place-city">New York</div>
+                <div class="place-date">Fri 27 Nov 2016</div>
+                <div class="place-desc">
+                  Prasent tincidunt sed tellus ut rutum sed vitae justo.
+                </div>
+                <button class="btn btn-ticket js-btn-ticket">
+                  Buy Tickets
+                </button>
+              </div>
+            </div>
+            <div class="place-item">
+              <img src="./assets/images/paris.jpg" alt="" class="place-img" />
+              <div class="place-body">
+                <div class="place-city">Paris</div>
+                <div class="place-date">Sat 28 Nov 2016</div>
+                <div class="place-desc">
+                  Prasent tincidunt sed tellus ut rutum sed vitae justo.
+                </div>
+                <button class="btn btn-ticket js-btn-ticket">
+                  Buy Tickets
+                </button>
+              </div>
+            </div>
+            <div class="place-item">
+              <img src="./assets/images/sanfran.jpg" alt="" class="place-img" />
+              <div class="place-body">
+                <div class="place-city">San Francisco</div>
+                <div class="place-date">Sun 29 Nov 20166</div>
+                <div class="place-desc">
+                  Prasent tincidunt sed tellus ut rutum sed vitae justo.
+                </div>
+                <button class="btn btn-ticket js-btn-ticket">
+                  Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal js-modal">
+        <div class="container js-container">
+          <div class="container-header">
+            <div class="container__icon js-icon-close">
+              <i class="fa-solid fa-x"></i>
+            </div>
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="container__name">Tickets</span>
+          </div>
+          <div class="container-body">
+            <form action="">
+              <i class="fa-solid fa-cart-arrow-down"></i>
+              <label for="many" class="container__label"
+                >Tickets, $15 per person</label
+              >
+              <input
+                class="container__input"
+                type="text"
+                placeholder="How many?"
+                id="many"
+              />
+              <i class="fa-solid fa-user"></i>
+              <label for="mail" class="container__label"> Send To</label>
+              <input
+                class="container__input"
+                type="text"
+                placeholder="Enter email"
+                id="mail"
+              />
+              <button class="container__submit">
+                Pay <i class="fa-solid fa-check"></i>
+              </button>
+            </form>
+          </div>
+          <div class="container-footer">
+            <button class="js-btn-close">Close X</button>
+            <div>Need <a href="#">help?</a></div>
+          </div>
+        </div>
+      </div>
+      <div id="contact">
+        <div class="section-content">
+          <div class="content-title">contact</div>
+          <div class="content-titlesub">Fan? Drop a note!</div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <p><i class="fas fa-map-marker-alt"></i>Chicago, US</p>
+              <p>
+                <i class="fas fa-phone-alt"></i>Phone:
+                <a href="tel:+00 151515">+00 151515</a>
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i>Email:
+                <a href="mailto:mail@mail.com">mail@mail.com</a>
+              </p>
+            </div>
+            <div class="contact-item">
+              <form action="">
+                <div class="contact-item-col-2">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name=""
+                    id=""
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Message"
+                  required
+                />
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map">
+        <img src="./assets/images/map.jpg" alt="map" />
+      </div>
+      <div id="footer">
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="copyright">Powered by <a href="#">w3.css</a></div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js//menu.js"></script>
+  <script>
+    var btnTickets = document.querySelectorAll(".js-btn-ticket");
+    var modal = document.querySelector(".js-modal");
+    var container = document.querySelector(".js-container");
+    var iconClose = document.querySelector(".js-icon-close");
+    var btnClose = document.querySelector(".js-btn-close");
+
+    function showModal() {
+      modal.classList.add("open");
+      container.classList.remove("fadeOut");
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideModal() {
+      modal.classList.remove("open");
+      container.classList.add("fadeOut");
+      document.body.style.overflow = "auto";
+    }
+
+    for (var btnTicket of btnTickets) {
+      btnTicket.addEventListener("click", showModal);
+    }
+
+    iconClose.addEventListener("click", hideModal);
+
+    btnClose.addEventListener("click", hideModal);
+
+    modal.addEventListener("click", hideModal);
+
+    container.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  </script>
+</html>
