@@ -45,7 +45,7 @@
 
 // const sumFor = [1, 2, 3, 4, 5];
 // var result = sumFor.reduce(function(total, value) {
-//   return total += value;
+//   return total + value;
 // })
 // console.log(result);
 
@@ -185,11 +185,13 @@
 //   { id: 'key2', value: 'Wonder Woman' },
 //   { id: 'key3', value: 'Spider man' },
 // ];
-// // const itemList = { key1: 'Superman', key2: 'Wonder Woman', key3: 'Spider man' };
+
+
+// const itemList = { key1: 'Superman', key2: 'Wonder Woman', key3: 'Spider man' };
 // var result = Object.entries(input).reduce(function (previous, current, index, array) {
 //   var obj = {};
 //   obj.id = current[0],
-//   obj.value = current[1]
+//   obj['value'] = current[1]
 //   previous.push(obj);
  
 //   return previous;
@@ -206,3 +208,72 @@
 // }, [])
 // console.log(result2);
 
+
+
+// var number = 1;
+// console.log(number++); 
+// console.log(number);
+// console.log(number++);
+// console.log(++number);
+// var number2 = number--;
+// console.log(number2)
+// console.log(number);
+
+
+
+
+// Viết code tại đây
+// function isNumber(value) {
+//   console.log(value + 0)
+//   return  value + 0 == value ? true : false
+// }
+// Kì vọng đạt được
+// console.log(isNumber(999)); // true
+// console.log(isNumber('abc')); // false
+// console.log(isNumber('100')); // false
+
+
+
+
+// Ví dụ sử dụng
+// var animals = ['Monkey', 'Tiger', 'Elephant', 'Pig', 'Chicken'];
+// var result = animals.splice(-1, 1, 'water')
+// // var result = animals.slice(0, -1)
+// console.log(result); 
+// console.log(animals); 
+
+
+
+
+// var myInfo = {
+//   name: 'Dự',
+//   age: 26,
+//   'address': 'Bình Định'
+// }
+// var myEmail = 'email'
+// myInfo[myEmail] = 'boyhotkey96@gmail.com'
+// console.log(myInfo)
+// console.log(myInfo.name)
+// console.log(myInfo['age'])
+
+
+
+
+
+// const monthNames = ["January", "February", "March", "April", "May", "June",
+//   "July", "August", "September", "October", "November", "December"
+// ];
+// var date = new Date();
+
+// var year = date.getFullYear();
+// // var month = parseInt((date.getMonth() + 1).toString().padStart(2, "0"));
+// var month = ("0" + (date.getMonth() + 1)).slice(-2)
+// // var month = String(date.getMonth() + 1).padStart(2, '0'); // is no supported in IE
+// // var month = monthNames[date.getMonth()];
+// // var month2 = date.toLocaleString('default', { month: 'long' });
+// var day = ('0' + (date.getDate())).slice(-2)
+// var hour = date.getHours()
+// var second = date.getSeconds()
+
+// console.log(typeof month)
+// console.log(`${day}/${month}/${year} ${hour}:${second}`)
