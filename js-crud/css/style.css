@@ -1,0 +1,94 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#wrapper {
+  margin-top: 5rem;
+}
+.panel {
+  margin: 0 auto;
+  width: 90rem;
+  max-width: 100%;
+}
+.panel .panel-heading {
+  background-color: #4267b2;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 1rem;
+}
+.form-1 {
+  border: 1px solid #4267b2;
+  padding: 4rem 2rem;
+}
+
+.form-1 .form-group:not(:first-child) {
+  margin-top: 3rem;
+}
+.form-1 .form-label {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+.form-1 .form-input {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.8rem;
+  background-color: rgba(229, 229, 229, 0.3);
+  border: 1px solid #ccc;
+}
+.form-button {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.form-1 .btn {
+  padding: 1rem 3rem;
+  cursor: pointer;
+  background-color: #e98383;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  font-size: 2rem;
+  outline: 0;
+  transition: .25s ease-out;
+}
+.form-1 .btn-add:hover, .form-1 .btn-reset:hover {
+    opacity: 0.8;
+}
+
+.table-1 {
+  width: 90rem;
+  border-collapse: collapse;
+}
+.table-1 th, td {
+  border: 1px solid #4267b2;
+}
+.table-1 th {
+  font-size: 2rem;
+  padding: 1.4rem 0;
+}
+.table-1 td {
+  font-size: 2rem;
+  padding: 1rem;
+}
