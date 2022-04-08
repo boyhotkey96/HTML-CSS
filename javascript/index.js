@@ -281,8 +281,39 @@ console.log(`${day}/${month}/${year} ${hour}:${second}`) */
 
 
 
-var xxx = {name: '1', manufacturer: '2', price: '3'};
-console.log(Object.keys(xxx));
-for (var i = 0; i < Object.keys(xxx).length; i++) {
-    console.log(Object.keys(xxx)[i]);
+// var xxx = {name: '1', manufacturer: '2', price: '3'};
+// console.log(Object.keys(xxx));
+// for (var i = 0; i < Object.keys(xxx).length; i++) {
+//     console.log(Object.keys(xxx)[i]);
+// }
+
+const defaultResult = 0;
+let currenResult = defaultResult;
+
+function add(num1, num2) {
+  console.log('1')
+  return currenResult = num1 + num2;
 }
+
+console.log('2')
+currenResult = add(1, 2);
+console.log(currenResult);
+
+/* // chia lấy phần nguyên trong js
+let num1 = 20;
+let num2 = 3;
+let result = num1 - num1 % num2;
+console.log(result); */ 
+
+
+
+let resultArray = [1, 3, 5, 6];
+let enterNumber = 55;
+console.log(resultArray.push(enterNumber)); // 5
+
+let test;
+console.log(test) // undefine
+console.log(typeof []) // object
+console.log(typeof(null)) // object
+console.log(typeof NaN) // number
+console.log(typeof(NaN) === "number")

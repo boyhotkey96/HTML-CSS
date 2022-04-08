@@ -3,7 +3,9 @@ let manufacturerProduct = document.querySelector('.manufacturer-product');
 let priceProduct = document.querySelector('.price-product');
 let btnAdd = document.querySelector('.btn-add');
 let tbody = document.querySelector('#result');
+let btnDelete = document.querySelector('#delete');
 let productList = [];
+let count = 0;
 
 
 function addProduct() {
@@ -16,6 +18,7 @@ function addProduct() {
   } */
   
   let objItem = {};
+  objItem.id            =   Number(++count);
   objItem.name          =   nameProduct.value,
   objItem.manufacturer  =   manufacturerProduct.value,
   objItem.price         =   priceProduct.value,
@@ -40,19 +43,42 @@ function addProduct() {
   } */
 
 
-  var str = '';
-  productList.forEach(function ( product) {
-       str += `<tr>
-                <td>1</td>
+  let str = '';
+  productList.forEach(function (product) {
+      str += `<tr>
+                <td>${product.id}</td>
                 <td>${product.name}</td>
                 <td>${product.manufacturer}</td>
                 <td>${product.price}</td>
+                <td>
+                  <input type="submit" id="delete" value="Delete" />
+                </td>
               </tr>`
-      
   })
-  // console.log(str)
+
   tbody.innerHTML = str;
+  // console.log('count: ' + count)
+
+  let btnDelete = document.querySelectorAll('#delete');
+  for (let i = 0; i < btnDelete.length; i++) {
+    btnDelete[i].addEventListener('click', function() {
+      let parentElement = btnDelete[i].closest('tr');
+      let textTD1 = parentElement.getElementsByTagName('td')[0].innerText;
+        deleteProduct(textTD1);
+    }, false);
+  }
 }
 
+
+function deleteProduct(textTD1) {
+  // productList.forEach(function (product) {
+    for (let x = 0; x < productList.length; x++) {
+        console.log(productList[x])
+        if (Object.entries(productList[x])[0][1] == textTD1) {
+          console.log(Object.entries(productList[x])[0][1])
+          productList.splice(productList[x], 1);
+        }
+  }
+}
 
 btnAdd.addEventListener('click', addProduct);
