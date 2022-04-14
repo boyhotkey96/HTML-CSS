@@ -267,7 +267,7 @@ var date = new Date();
 
 var year = date.getFullYear();
 // var month = parseInt((date.getMonth() + 1).toString().padStart(2, "0"));
-var month = ("0" + (date.getMonth() + 1)).slice(-2)
+var month = ("0" + (date`.getMonth() + 1)).slice(-2)
 // var month = String(date.getMonth() + 1).padStart(2, '0'); // is no supported in IE
 // var month = monthNames[date.getMonth()];
 // var month2 = date.toLocaleString('default', { month: 'long' });
@@ -287,33 +287,77 @@ console.log(`${day}/${month}/${year} ${hour}:${second}`) */
 //     console.log(Object.keys(xxx)[i]);
 // }
 
-const defaultResult = 0;
-let currenResult = defaultResult;
-
-function add(num1, num2) {
-  console.log('1')
-  return currenResult = num1 + num2;
-}
-
-console.log('2')
-currenResult = add(1, 2);
-console.log(currenResult);
 
 /* // chia lấy phần nguyên trong js
 let num1 = 20;
 let num2 = 3;
-let result = num1 - num1 % num2;
+// let result = num1 - num1 % num2;
+let result = Math.floor(num1 / num2);
 console.log(result); */ 
 
 
 
-let resultArray = [1, 3, 5, 6];
+/* let resultArray = [1, 3, 5, 6];
 let enterNumber = 55;
-console.log(resultArray.push(enterNumber)); // 5
+console.log(resultArray.push(enterNumber)); // 5 */
 
-let test;
+/* let test;
 console.log(test) // undefine
 console.log(typeof []) // object
 console.log(typeof(null)) // object
 console.log(typeof NaN) // number
-console.log(typeof(NaN) === "number")
+console.log(typeof(NaN) === "number") */
+
+
+
+// const defaultResult = 0;
+// let currenResult = defaultResult;
+
+// function add(num1, num2) {
+//   console.log('1')
+//   return currenResult = num1 + num2;
+// }
+
+// console.log('2')
+// currenResult = add(1, 2);
+// console.log(currenResult);
+
+
+/* console.log('test')
+var x = 1;
+function f1() {
+  console.log(x);
+}
+f1()
+ 
+x = 100;
+function f2() {
+  f1();
+}
+f2() */
+
+
+
+
+/* let object1 = {
+  name: "John",
+  lastName: "Doe"
+}
+
+let object2 = {
+  name: "John",
+  lastName: "Doe"
+}
+let object3 = object1;
+console.log(object1 === object2);
+console.log(object3 === object1); */
+
+
+let userInput = 1;
+let age;
+if(!0 && userInput && age === null) {
+  console.log(3 + true - 5)
+  console.log((5 - 5 % 2) / 2)
+}
+let x = Number.isNaN(1 /1)
+console.log(x)
