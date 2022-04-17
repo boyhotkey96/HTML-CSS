@@ -36,6 +36,7 @@ for (var i of sumFor) {
 console.log(total); */
 
 
+
 // Hàm tính tổng bằng reduce
 // 1. Xác định giá trị khởi tạo
 // 2. Xác định công thức với KQ của bước trước đó
@@ -359,5 +360,47 @@ if(!0 && userInput && age === null) {
   console.log(3 + true - 5)
   console.log((5 - 5 % 2) / 2)
 }
-let x = Number.isNaN(1 /1)
+let x = Number.isNaN(!0/0)
+let y = 'NaN' === 'NaN'
+let z = 0;
 console.log(x)
+console.log(y)
+console.log(isNaN(z))
+// console.log(isNaN('   s'))
+
+
+
+
+/* // Viết hàm kiểm tra giá trị có phải là 1 số hay không
+function isNumber(value) {
+  // return typeof value === 'number' && value.toString() !== 'NaN';
+  // return typeof value === 'number' && !isNaN(value);
+  return Number.isFinite(value);
+}
+console.log(isNumber(1/0)); */
+
+
+
+
+/* // Duyệt mảng color và thay đổi background của body sau mỗi click
+const colorList = ['pink', 'green', 'red'];
+const btn = document.getElementById('btn');
+let index = 0;    
+// btn.addEventListener('click', () => {
+//   document.body.style.backgroundColor = colorList[index];
+//   index++; 
+//   if (index > 2) {
+//     index = 0;
+//   }
+// });
+btn.addEventListener('click', () => {
+  document.body.style.backgroundColor = colorList[index++ % 3];
+});
+// btn.onclick = () => document.body.style.backgroundColor = colorList[index++ % 3]; */
+
+
+const array = [1,2,3,4,5];
+for (let number of array) {
+  console.log(`index: ${array.indexOf(number)}`);
+  console.log(number);
+}
