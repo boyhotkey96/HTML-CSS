@@ -292,9 +292,9 @@ console.log(`${day}/${month}/${year} ${hour}:${second}`) */
 /* // chia lấy phần nguyên trong js
 let num1 = 20;
 let num2 = 3;
-// let result = num1 - num1 % num2;
+// let result = (num1 - num1 % num2) / num2;
 let result = Math.floor(num1 / num2);
-console.log(result); */ 
+console.log(result);  */
 
 
 
@@ -354,21 +354,6 @@ console.log(object1 === object2);
 console.log(object3 === object1); */
 
 
-let userInput = 1;
-let age;
-if(!0 && userInput && age === null) {
-  console.log(3 + true - 5)
-  console.log((5 - 5 % 2) / 2)
-}
-let x = Number.isNaN(!0/0)
-let y = 'NaN' === 'NaN'
-let z = 0;
-console.log(x)
-console.log(y)
-console.log(isNaN(z))
-// console.log(isNaN('   s'))
-
-
 
 
 /* // Viết hàm kiểm tra giá trị có phải là 1 số hay không
@@ -399,8 +384,63 @@ btn.addEventListener('click', () => {
 // btn.onclick = () => document.body.style.backgroundColor = colorList[index++ % 3]; */
 
 
-const array = [1,2,3,4,5];
-for (let number of array) {
-  console.log(`index: ${array.indexOf(number)}`);
-  console.log(number);
+// const array = [1,2,3,4,5];
+// for (let number of array) {
+//   console.log(`index: ${array.indexOf(number)}`);
+//   console.log(number);
+// }
+
+
+
+/* // Phân biệt null và undefined trong js
+let testVar1;
+let testVar2 = null;
+console.log(testVar1) //undefine: biến đã được khai báo nhưng chưa được gán giá trị (chưa được gán)
+console.log(testVar2) //null: là một giá trị gán. Nó có thể được gán cho một biến dưới dạng đại diện không có giá trị (giá trị được gán = null) */
+
+
+
+
+// var a = 0/0;
+// console.log(a === NaN); // false
+// console.log(Object.is(a, NaN)); // true
+
+
+// let userInput = 1;
+// let age;
+// if(!0 && userInput && age === null) {
+//   console.log(3 + true - 5)
+//   console.log((5 - 5 % 2) / 2)
+// }
+// let x = Number.isNaN(!0/0)
+// let y = 'NaN' === 'NaN'
+// let z = 0;
+// console.log(x)
+// console.log(y)
+// console.log(isNaN(z))
+// // console.log(isNaN('   s'))
+
+
+console.log(isNaN({a:2}))
+console.log(Number.isFinite(0/0))
+
+
+let sum = 0;
+for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 2; j++) {
+        console.log(i);
+        // console.log(j);
+        sum = sum + i + j;
+        console.log('sum: ' + sum)
+    }
 }
+let total = 0+0+0+1+1+0+1+1+2+0+2+1+3+0+3+1+4+0+4+1;
+console.log(total)
+
+
+let greeting = 'say Hi';
+if (true) {
+    let greeting = 'say Hello instead';
+    console.log(greeting); // “say Hello instead”
+}
+console.log(greeting); // “say Hi”
