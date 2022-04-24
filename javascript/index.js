@@ -349,7 +349,7 @@ let object2 = {
   name: "John",
   lastName: "Doe"
 }
-let object3 = object1;
+let object3 = object1;`
 console.log(object1 === object2);
 console.log(object3 === object1); */
 
@@ -421,26 +421,135 @@ console.log(testVar2) //null: là một giá trị gán. Nó có thể được 
 // // console.log(isNaN('   s'))
 
 
-console.log(isNaN({a:2}))
-console.log(Number.isFinite(0/0))
+// console.log(isNaN({a:2}))
+// console.log(Number.isFinite(0/0))
 
 
-let sum = 0;
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 2; j++) {
-        console.log(i);
-        // console.log(j);
-        sum = sum + i + j;
-        console.log('sum: ' + sum)
-    }
-}
-let total = 0+0+0+1+1+0+1+1+2+0+2+1+3+0+3+1+4+0+4+1;
-console.log(total)
+// let sum = 0;
+// for (let i = 0; i < 5; i++) {
+//     for (let j = 0; j < 2; j++) {
+//         console.log(i);
+//         // console.log(j);
+//         sum = sum + i + j;
+//         console.log('sum: ' + sum)
+//     }
+// }
+// let total = 0+0+0+1+1+0+1+1+2+0+2+1+3+0+3+1+4+0+4+1;
+// console.log(total)
 
 
-let greeting = 'say Hi';
+/* let greeting = 'say Hi';
 if (true) {
     let greeting = 'say Hello instead';
     console.log(greeting); // “say Hello instead”
 }
-console.log(greeting); // “say Hi”
+console.log(greeting); // “say Hi” */
+
+
+
+
+/* let myName = 'Flavio'
+let secondName = myName;
+myName = 'Roger'
+console.log(secondName) */
+
+
+
+
+/* //Cách truyền đối số đầu tiên với tham số mặc định đầu tiên
+let winner = (computer = 'tôi là: ', person) => console.log(computer + person)
+winner(undefined, 'boyhotkey96') */
+
+
+
+
+
+/* const getWinner = (cChoice, pChoice) =>
+  cChoice === pChoice
+    ? RESULT_DRAW
+    : (cChoice === ROCK && pChoice === PAPER) ||
+      (cChoice === PAPER && pChoice === SCISSORS) ||
+      (cChoice === SCISSORS && pChoice === ROCK)
+    ? pChoice > 0.5
+        ? RESULT_PLAYER_WINS_GOOD
+        : RESULT_PLAYER_WINS
+    : RESULT_COMPUTER_WINS;
+    // if (cChoice === pChoice) {
+    //   return RESULT_DRAW;
+    // } else if (
+    //   (cChoice === ROCK && pChoice === PAPER) ||
+    //   (cChoice === PAPER && pChoice === SCISSORS) ||
+    //   (cChoice === SCISSORS && pChoice === ROCK)
+    // ) {
+    //   if (pChoice > 0.5) {
+    //     return RESULT_PLAYER_WINS_GOOD;
+    //   } else {
+    //     return RESULT_PLAYER_WINS;
+    //   }
+    //   // return RESULT_PLAYER_WINS;
+    // } else {
+    //   return RESULT_COMPUTER_WINS;
+    // } */
+
+
+
+
+
+
+
+/* //REST trong arrow function
+const total = (a, ...numbers) => {
+  // console.log(numbers);
+  // console.log(arguments);
+  const validateNumber = (number) => {
+    return Number.isNaN(number) ? 0 : +number
+  }
+
+  let result = 0;
+  for (let i of numbers) {
+    result += validateNumber(i);
+  }
+  return result;
+}       
+console.log(total(1, 2, 3, 4, '9', 11));
+
+console.log(typeof '9') */
+
+
+
+
+
+//Understanding Callback Function
+const combind = (resultHandler, operator, ...numbers) => {
+  const checkValidateNumber = (number) => {
+    return !Number.isNaN(number) && typeof number === 'number' ? number : 0;
+  }
+
+  let result = 0;
+  for (const number of numbers) {
+    if (operator === 'ADD') {
+      result += checkValidateNumber(number);
+    } else if(operator === 'SUB')
+      result -= checkValidateNumber(number);
+  }
+  resultHandler(result, operator);
+}
+
+// const sub = (resultHandler, ...numbers) => {
+//   const checkValidateNumber = (number) => {
+//     return !Number.isNaN(number) && typeof number === 'number' ? number : 0;
+//   }
+//   let result = 0;
+//   for (const number of numbers) {
+//     result -= checkValidateNumber(number);
+//   }
+//   resultHandler(result, 'Tổng âm là: ');
+// }
+
+const showTotal = (message, result) => {
+  console.log(message + ' ' + result);
+}
+
+combind(showTotal.bind(this, 'Tổng số dương là:'), 'ADD', 1, 5, '4', 2, 8);
+combind(showTotal.bind(null, 'Tổng số dương là:'), 'ADD', 3, 5, 6, 2, 8);
+combind(showTotal.bind('kakaka', 'Tổng số âm là:'), 'SUB', 3, 5, 6, 2, 8);
