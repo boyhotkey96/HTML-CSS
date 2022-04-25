@@ -1,16 +1,19 @@
-let nameProduct = document.querySelector('.name-product');
-let manufacturerProduct = document.querySelector('.manufacturer-product');
-let priceProduct = document.querySelector('.price-product');
-let btnAdd = document.querySelector('.btn-add');
-let tbody = document.querySelector('#result');
-let btnDelete = document.querySelector('#delete');
+const nameProduct = document.querySelector('.name-product');
+const manufacturerProduct = document.querySelector('.manufacturer-product');
+const priceProduct = document.querySelector('.price-product');
+
+const btnAdd = document.querySelector('.btn-add');
+const btnDelete = document.querySelector('#delete');
+
+const tbody = document.querySelector('#result');
+
 let productList = [];
 let count = 0;
 
 
 function addProduct() {
-  if (nameProduct.value === '' || manufacturerProduct.value === '' || priceProduct.value === '') return null
-  
+  if (!nameProduct.value || !manufacturerProduct.value || !priceProduct.value) return null
+
   /* let arrProduct = {
     name          :   nameProduct.value,
     manufacturer  :   manufacturerProduct.value,
@@ -22,7 +25,6 @@ function addProduct() {
   objItem.name          =   nameProduct.value,
   objItem.manufacturer  =   manufacturerProduct.value,
   objItem.price         =   priceProduct.value,
-  // console.log(objItem);
   
   productList.push(objItem);
   console.log(productList);
@@ -41,7 +43,6 @@ function addProduct() {
       console.log(productList[product][Object.keys(productList[product])[i]])
     }
   } */
-
 
   let str = '';
   productList.forEach(function (product) {
