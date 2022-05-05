@@ -10,11 +10,11 @@ fetch(postApi)
     posts.forEach(function(item, index) {
       if (index <= 50) {
         return total += `<div>
-        <h1>${item.id}</h1>
-        <h1>${item.title}</h1>
-        <p>${item.body}</p>
-        </div>
-        `
+                        <h1>${item.id}</h1>
+                        <h1>${item.title}</h1>
+                        <p>${item.body}</p>
+                        </div>
+                        `
       }
     });
     return showJson.innerHTML = total;
@@ -29,4 +29,4 @@ fetch(postApi)
     });
     return showJson.innerHTML = htmls; */
   })
-  .catch((error) => alert('Có lỗi!'))
+  .catch((error) => alert('Có lỗi!'));

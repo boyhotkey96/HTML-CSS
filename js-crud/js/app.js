@@ -3,83 +3,98 @@ const manufacturerProduct = document.querySelector('.manufacturer-product');
 const priceProduct = document.querySelector('.price-product');
 
 const btnAdd = document.querySelector('.btn-add');
-const btnDelete = document.querySelector('#delete');
-
 const tbody = document.querySelector('#result');
 
-let productList = [];
+const productList = [];
 let count = 0;
 
 
-function addProduct() {
-  if (!nameProduct.value || !manufacturerProduct.value || !priceProduct.value) return null
 
-  /* let arrProduct = {
-    name          :   nameProduct.value,
-    manufacturer  :   manufacturerProduct.value,
-    price         :   cpriceProduct.value,
-  } */
-  
-  let objItem = {};
-  objItem.id            =   Number(++count);
-  objItem.name          =   nameProduct.value,
-  objItem.manufacturer  =   manufacturerProduct.value,
-  objItem.price         =   priceProduct.value,
-  
-  productList.push(objItem);
+const updateUI = () => {
+  const panelResultElement = document.getElementById('panel-result');
+  if (productList.length === 0) {
+    panelResultElement.style.display = 'none';
+  } else {
+    panelResultElement.style.display = 'block';
+  }
+}
+
+const clearInput = () => {
+  nameProduct.value = '';
+  manufacturerProduct.value = '';
+  priceProduct.value = '';
+}
+
+
+const deleteProduct = (id) => {
+  let countIndex = 1;
+  for (const product of productList) {
+    if (product.id === Number(id)) {
+      productList.splice(countIndex - 1, 1);
+      break;
+    }
+    countIndex++;
+  }
   console.log(productList);
 
- /*  //loop for
-  for (let product = 0; product < productList.length; product++) {
-    for (let i = 0; i < Object.values(productList[product]).length; i++) {
-      console.log(Object.values(productList[product])[i]);
+  const resultElement = document.getElementById('result');
+  const trElement = resultElement.querySelectorAll('tr');
+  // trElement[countIndex-1].remove();
+  resultElement.removeChild(trElement[countIndex-1]);
+  updateUI();
+}
+
+
+/* const renderNewProduct = (id, name, manufacturer, price) => {
+  const trElement = document.createElement('tr');
+  trElement.innerHTML = `<tr>
+                          <td>${id}</td>
+                          <td>${name}</td>
+                          <td>${manufacturer}</td>
+                          <td>${price}</td>
+                          <td>
+                            <input type="submit" id="delete" value="Delete" onclick="deleteProduct('${id}')" />
+                          </td>
+                        </tr>
+                        `
+  tbody.append(trElement);
+} */
+
+
+const addProduct = () => {
+  const nameProductValue = nameProduct.value;
+  const manufacturerProductValue = manufacturerProduct.value;
+  const priceProductValue = nameProduct.value;
+
+  if (!nameProductValue.trim() || !manufacturerProductValue.trim() || !priceProductValue.trim()) {
+    alert('You entered wrong: Product Infomation invalid!');
+  } else {  
+    let objItem = {
+      id            :   Number(++count),
+      name          :   nameProductValue,
+      manufacturer  :   manufacturerProductValue,
+      price         :   priceProductValue,
     }
-  } */
-
-  /* // loop for in get values
-  for (let product = 0; product < productList.length; product++) {
-    console.log(productList[product])
-    for (let i in Object.keys(productList[product])) {
-      console.log(productList[product][Object.keys(productList[product])[i]])
-    }
-  } */
-
-  let str = '';
-  productList.forEach(function (product) {
-      str += `<tr>
-                <td>${product.id}</td>
-                <td>${product.name}</td>
-                <td>${product.manufacturer}</td>
-                <td>${product.price}</td>
-                <td>
-                  <input type="submit" id="delete" value="Delete" />
-                </td>
-              </tr>`
-  })
-
-  tbody.innerHTML = str;
-  // console.log('count: ' + count)
-
-  let btnDelete = document.querySelectorAll('#delete');
-  for (let i = 0; i < btnDelete.length; i++) {
-    btnDelete[i].addEventListener('click', function() {
-      let parentElement = btnDelete[i].closest('tr');
-      let textTD1 = parentElement.getElementsByTagName('td')[0].innerText;
-        deleteProduct(textTD1);
-    }, false);
+    productList.push(objItem);
+    console.log(productList);
+    clearInput();
+    // renderNewProduct(objItem.id, objItem.name, objItem.manufacturer, objItem.price);
+    const trElement = document.createElement('tr');
+    trElement.innerHTML = `<tr>
+                            <td>${objItem.id}</td>
+                            <td>${objItem.name}</td>
+                            <td>${objItem.manufacturer}</td>
+                            <td>${objItem.price}</td>
+                            <td>
+                              <input type="submit" id="delete" value="Delete" onclick="deleteProduct('${objItem.id}')" />
+                            </td>
+                          </tr>
+                          `
+    tbody.append(trElement);
+    updateUI();
   }
 }
 
 
-function deleteProduct(textTD1) {
-  // productList.forEach(function (product) {
-    for (let x = 0; x < productList.length; x++) {
-        console.log(productList[x])
-        if (Object.entries(productList[x])[0][1] == textTD1) {
-          console.log(Object.entries(productList[x])[0][1])
-          productList.splice(productList[x], 1);
-        }
-  }
-}
 
 btnAdd.addEventListener('click', addProduct);
