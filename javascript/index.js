@@ -1,4 +1,22 @@
+const arrList = [1, 22, '33', 14, 15, 46, 7];
+const maxArray = arrList.sort((a,b) => {
+  // if (b > a) {
+  //   return 1
+  // } else if (a > b) {
+  //   return -1
+  // } else {
+  //   return 0
+  // }
+  return b > a ? -1 : b < a ? 1 : 0
+});
+console.log('Tăng dần: ' + maxArray);
+console.log(maxArray.reverse());
+
+
+
+
 /* const wordList = ["javascripts", "JS", "love", "easy", "frontend", "PHP"];
+
 
 var result = wordList.sort(function (a, b) {
   return b.length - a.length;
@@ -59,7 +77,7 @@ console.log(result); */
 // Output:  frontend
 
 /* const wordList = ['love', 'easy', 'frontend'];
-var  result = '';
+var  result = wordList[0];
 for (var i = 0; i < wordList.length; i++) {
   result.length < wordList[i].length ? result = wordList[i] : result;
 }
@@ -67,7 +85,7 @@ console.log(result); */
 
 
 /* const wordList = ['love', 'easy', 'frontend'];
-var result = '';
+var result = wordList[0];
 wordList.forEach(function(value, index) {
   result = value;
 })
@@ -553,3 +571,116 @@ const showTotal = (message, result) => {
 combind(showTotal.bind(this, 'Tổng số dương là:'), 'ADD', 1, 5, '4', 2, 8);
 combind(showTotal.bind(null, 'Tổng số dương là:'), 'ADD', 3, 5, 6, 2, 8);
 combind(showTotal.bind('kakaka', 'Tổng số âm là:'), 'SUB', 3, 5, 6, 2, 8);
+
+
+
+/* // Dùng split() & chuyển đổi về số linh động hơn
+const info = 'Hồ Chí Minh, 7000, Việt Nam, 19008198';
+const transData = info.split(', ');
+for (let i in transData) {
+  if (transData[i] * 1 == transData[i]) {
+    transData[i] = +transData[i];
+  }
+}
+console.log(transData); */
+
+
+
+
+
+function workArray() {
+  const input = [
+    {
+      id: 1,
+      city: "taipei",
+      color: "blue",
+      total: 200
+    },
+    {
+      id: 2,
+      city: "taichung",
+      color: "red",
+      total: 100
+    },
+    {
+      id: 3,
+      city: "hsinchu",
+      color: "blue",
+      total: 100
+    },
+    {
+      id: 4,
+      city: "taoyuan",
+      total: 100,
+      age: 30
+    }
+  ];
+   
+  const expected = [
+    {
+      param: "id",
+      values: [1, 2, 3, 4]
+    },
+    {
+      param: "city",
+      values: ["taipei", "taichung", "hsinchu", "taoyuan"]
+    },
+    {
+      param: "color",
+      values: ["red", "blue"]
+    },
+    {
+      param: "total",
+      values: [100, 200]
+    },
+    {
+      param: "age",
+      values: [30]
+    }
+  ];
+  
+  let obj = {};
+  input.forEach(item => {
+    Object.keys(item).forEach(key => {
+      // console.log('values: ' + item[key])
+      // console.log(obj[key])
+      obj[key] = obj[key] ? [ ...obj[key], item[key] ] : [ item[key] ] 
+    })
+  });
+  console.log(obj);
+  
+  const out = Object.keys(obj).map(key => {
+    return { param: key, values: obj[key] }
+  });
+  console.log(out);
+  
+  /*// input -> output với mảng
+  const obj = {}
+  input.forEach((el) => {
+    Object.keys(el).forEach(key => {
+      obj[key] = obj[key] ? [ ...obj[key], el[key] ] : [ el[key] ] 
+    })
+  })
+   
+  const out = Object.keys(obj).map(key => {
+    return { param: key, values: obj[key] }
+  })
+   
+  console.log(out); */
+}
+workArray();
+
+
+
+
+
+var maximum = Number.MIN_SAFE_INTEGER;
+ 
+var array = [-3, -2, 217, 9, -8, 46];
+array.forEach(function(value){
+  if(value > maximum) {
+    maximum = value;
+  }
+});
+ 
+console.log(maximum); // 217

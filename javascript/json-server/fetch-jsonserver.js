@@ -1,4 +1,4 @@
-const postApi = 'http://localhost:3000/profile';
+const postApi = 'http://localhost:3000/post';
 
 fetch(postApi)
   .then(response => response.json())
