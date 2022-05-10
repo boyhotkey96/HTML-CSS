@@ -684,3 +684,21 @@ array.forEach(function(value){
 });
  
 console.log(maximum); // 217
+
+
+
+
+const timSoMaxMin = (...input) => {
+  let max = input[0];
+  let min = input[0];
+  for (const value of input) {
+    if (value > max) {
+      max = value
+    } else if (value < min) {
+      min = value
+    }
+  }
+  return [max, min];
+}
+console.log(timSoMaxMin(3, 1, 5, 91, 2, 56, 32));
+console.log(timSoMaxMin(...array));
