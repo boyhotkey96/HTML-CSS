@@ -14,15 +14,33 @@ const renderMovie = (filter = '') => {
     movieUl.classList.add('visible');
   }
   movieUl.innerHTML = '';
-  
+
   const filterResult = !filter ? movieList : movieList.filter(item => item.info.title.toLowerCase().includes(filter.toLowerCase()));
-  
+
+  if (filterResult.length === 0) {
+    const h1Element = document.createElement('h1');
+    h1Element.textContent = 'Dữ liệu bạn tìm kiếm hiện không tồn tại!';
+    movieUl.append(h1Element);
+    return;
+  }
+
   filterResult.forEach(item => {
+    // if (!(item === undefined)) {
+    //   // running
+    // }
     const { info, ...otherPops } = item;
     // console.log(otherPops);
+    // const { title: movieTitle } = info;
     const movieLi = document.createElement('li');
-    const { title: movieTitle } = info;
-    let text = movieTitle + ' - ';
+    let { getFormatTitle } = item;
+
+    /* getFormatTitle = getFormatTitle.bind(item);
+    let text = getFormatTitle() + ' - '; */
+    /* getFormatTitle = getFormatTitle.call(item);
+    let text = getFormatTitle + ' - '; */
+
+    getFormatTitle = getFormatTitle.apply(item);
+    let text = getFormatTitle + ' - ';
     for (const key in info) {
       if (key !== 'title') {
         text += `${key}: ${info[key]}`;
@@ -42,25 +60,30 @@ const addMovieHandler = () => {
   if (!title.trim() || !extraName.trim() || !extraValue.trim()) {
     return alert('You must enter value!');
   }
-  let obj = {
+
+  const obj = {
     info: {
       title,
       [extraName]: extraValue
     },
-    id: Math.random().toString()
-  }
+    id: Math.random().toString(),
+    getFormatTitle() {
+      return this.info.title.toUpperCase();
+    }
+  };
   movieList.push(obj);
   console.log(movieList);
   renderMovie();
- 
+
 };
 
-const searchMovieHandler = () => {
+const searchMovieHandler = function() {
+  console.log(this);
   const filterValue = document.getElementById('filter-title').value;
   renderMovie(filterValue);
 }
 
 
 
-btnAddMovie.addEventListener('click', addMovieHandler);
+btnAddMovie.addEventListener('click', addMovieHandler.bind(null, this));
 btnSearchMovie.addEventListener('click', searchMovieHandler);
