@@ -55,6 +55,7 @@ const deleteProduct = (id) => {
   const resultElement = document.getElementById('result');
   const trElement = resultElement.querySelectorAll('tr');
   // trElement[countIndex-1].remove();
+  // trElement[0].parentNode.removeChild(trElement[countIndex - 1]);
   resultElement.removeChild(trElement[countIndex - 1]);
   updateUI();
 }
