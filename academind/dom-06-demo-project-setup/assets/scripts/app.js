@@ -47,7 +47,7 @@ const cacelAddMovieModal = () => {
 
 const backdropClick = () => {
   closeMovieModal();
-  backdropClick();
+  // backdropClick();
   closeDeleteModal();
 }
 
