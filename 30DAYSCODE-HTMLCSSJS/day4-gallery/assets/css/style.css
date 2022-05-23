@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap");
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.7rem;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  width: 120rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gallery-image {
+  width: 22%;
+  height: 20rem;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.25s ease-out;
+}
+.gallery-image:hover img {
+  transform: scale(1.2);
+}
+.gallery-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease-out;
+}
+.gallery-slide__inner {
+  width: 70%;
+  height: 70%;
+}
+.gallery-slide__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-slide__close {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+.gallery-slide__prev, .gallery-slide__next {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  position: fixed;
+  cursor: pointer;
+}
+.gallery-slide__prev {
+  left: 3rem;
+}
+.gallery-slide__next {
+  right: 3rem;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/*# sourceMappingURL=style.css.map */

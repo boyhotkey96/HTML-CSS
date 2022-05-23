@@ -1,0 +1,90 @@
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  width: 120rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  &-image {
+    width: 22%;
+    height: 20rem;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: 0.25s ease-out;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
+  &-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    opacity: 0;
+    // pointer-events: none;
+    visibility: hidden;
+    transition: 0.25s ease-out;
+    &__inner {
+      width: 70%;
+      height: 70%;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__close {
+      position: fixed;
+      right: 2rem;
+      top: 2rem;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+    }
+    &__prev,
+    &__next {
+      display: flex;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+      position: fixed;
+      cursor: pointer;
+    }
+    &__prev {
+      left: 3rem;
+    }
+    &__next {
+      right: 3rem;
+    }
+  }
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  // pointer-events: auto;
+  transform: scale(1);
+}
