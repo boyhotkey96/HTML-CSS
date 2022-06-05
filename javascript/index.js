@@ -588,7 +588,7 @@ console.log(transData); */
 
 
 
-function workArray() {
+/* function workArray() {
   const input = [
     {
       id: 1,
@@ -654,27 +654,27 @@ function workArray() {
   });
   console.log(out);
   
-  /*// input -> output với mảng
-  const obj = {}
-  input.forEach((el) => {
-    Object.keys(el).forEach(key => {
-      obj[key] = obj[key] ? [ ...obj[key], el[key] ] : [ el[key] ] 
-    })
-  })
+  // // input -> output với mảng
+  // const obj = {}
+  // input.forEach((el) => {
+  //   Object.keys(el).forEach(key => {
+  //     obj[key] = obj[key] ? [ ...obj[key], el[key] ] : [ el[key] ] 
+  //   })
+  // })
    
-  const out = Object.keys(obj).map(key => {
-    return { param: key, values: obj[key] }
-  })
+  // const out = Object.keys(obj).map(key => {
+  //   return { param: key, values: obj[key] }
+  // })
    
-  console.log(out); */
+  // console.log(out);
 }
-workArray();
+workArray(); */
 
 
 
 
 
-var maximum = Number.MIN_SAFE_INTEGER;
+/* var maximum = Number.MIN_SAFE_INTEGER;
  
 var array = [-3, -2, 217, 9, -8, 46];
 array.forEach(function(value){
@@ -683,11 +683,11 @@ array.forEach(function(value){
   }
 });
  
-console.log(maximum); // 217
+console.log(maximum); // 217 */
 
 
 
-
+/*// Tim max & min
 const timSoMaxMin = (...input) => {
   let max = input[0];
   let min = input[0];
@@ -701,4 +701,18 @@ const timSoMaxMin = (...input) => {
   return [max, min];
 }
 console.log(timSoMaxMin(3, 1, 5, 91, 2, 56, 32));
-console.log(timSoMaxMin(...array));
+console.log(timSoMaxMin(...array)); */
+
+
+// Factory funtion
+function createTaxCalculator(tax) {
+  function calculateTax(amount) {
+    return amount * tax;
+  }
+  return calculateTax;
+}
+ 
+const calculateVatAmount = createTaxCalculator(0.19);
+console.log(calculateVatAmount(100));
+
+console.log(createTaxCalculator(0.19)(100));
