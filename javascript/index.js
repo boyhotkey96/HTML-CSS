@@ -716,3 +716,12 @@ const calculateVatAmount = createTaxCalculator(0.19);
 console.log(calculateVatAmount(100));
 
 console.log(createTaxCalculator(0.19)(100));
+
+
+
+
+/* // Đệ quy
+function powerOf(x, n) {
+  return n === 1 ? x : x * powerOf(x, n - 1)
+}
+console.log(powerOf(2, 4)); */
