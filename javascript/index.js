@@ -725,3 +725,25 @@ function powerOf(x, n) {
   return n === 1 ? x : x * powerOf(x, n - 1)
 }
 console.log(powerOf(2, 4)); */
+
+
+
+// Rest with reduce
+const course = 'Javascript'
+const brand = 'F8'
+function highlight([first,...strings], ...values) {
+  return values.reduce((acc, cur) => [
+    ...acc, `<span>${cur}</span>` + strings.shift()
+  ], [first]
+  )
+}
+const html = highlight`Học lập trình ${course} tại ${brand}!`
+console.log(html.join(''))
+
+// console[log]('warning')
+
+
+
+const arr = ['a', 'b', 'c', 'd']
+let arrayItem = arr[42];
+console.log(arrayItem)
