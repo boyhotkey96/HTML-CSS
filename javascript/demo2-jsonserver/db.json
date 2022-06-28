@@ -1,0 +1,44 @@
+{
+  "film": [
+    {
+      "id": 1,
+      "name": "Trường ca hành",
+      "episode": "48"
+    },
+    {
+      "name": "   Trần Tình Lệnh",
+      "episode": "    58",
+      "id": 2
+    },
+    {
+      "name": "Tam sinh",
+      "episode": "60",
+      "id": 3
+    },
+    {
+      "name": "Hoa Thiên Cốt",
+      "episode": "60",
+      "id": 4
+    },
+    {
+      "name": "Hộc Châu Phu Nhân",
+      "episode": "60",
+      "id": 5
+    },
+    {
+      "name": "Tam Quốc Diễn Nghĩa",
+      "episode": "120",
+      "id": 6
+    },
+    {
+      "name": "Thả Thí Thiên Hạ",
+      "episode": "60",
+      "id": 7
+    },
+    {
+      "name": "Tây Du Ký",
+      "episode": "1001",
+      "id": 8
+    }
+  ]
+}
