@@ -747,3 +747,12 @@ console.log(html.join(''))
 const arr = ['a', 'b', 'c', 'd']
 let arrayItem = arr[42];
 console.log(arrayItem)
+
+var greeting = 'Hola';
+var name = 'Thau';
+
+(function(window, name){
+//code here
+var greeting = 'Hello';
+console.log(greeting + ' ' + name)
+})(window, name);
