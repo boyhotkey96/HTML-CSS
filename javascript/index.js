@@ -704,7 +704,7 @@ console.log(timSoMaxMin(3, 1, 5, 91, 2, 56, 32));
 console.log(timSoMaxMin(...array)); */
 
 
-// Factory funtion
+/* // Factory funtion
 function createTaxCalculator(tax) {
   function calculateTax(amount) {
     return amount * tax;
@@ -715,7 +715,7 @@ function createTaxCalculator(tax) {
 const calculateVatAmount = createTaxCalculator(0.19);
 console.log(calculateVatAmount(100));
 
-console.log(createTaxCalculator(0.19)(100));
+console.log(createTaxCalculator(0.19)(100)); */
 
 
 
@@ -728,7 +728,7 @@ console.log(powerOf(2, 4)); */
 
 
 
-// Rest with reduce
+/* // Rest with reduce
 const course = 'Javascript'
 const brand = 'F8'
 function highlight([first,...strings], ...values) {
@@ -740,11 +740,11 @@ function highlight([first,...strings], ...values) {
 const html = highlight`Học lập trình ${course} tại ${brand}!`
 console.log(html.join(''))
 
-// console[log]('warning')
+// console[log]('warning') */
 
 
 
-const arr = ['a', 'b', 'c', 'd']
+/* const arr = ['a', 'b', 'c', 'd']
 let arrayItem = arr[42];
 console.log(arrayItem)
 
@@ -755,4 +755,20 @@ var name = 'Thau';
 //code here
 var greeting = 'Hello';
 console.log(greeting + ' ' + name)
-})(window, name);
+})(window, name); */
+
+
+
+/* // convert character to *
+function convertCharacter(input) {
+  let output = '';
+  // for (let i = 0; i < input.length; i++) {
+  //   output += '*'
+  // }
+  // console.log(output)
+  for (let item of input) {
+   item === ' ' ? output += ' ' : output += '*'
+  }
+  console.log(output)
+}
+convertCharacter('1 11 111 1111 11111 1'); */
