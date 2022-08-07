@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="./index.js" defer></script>
-</head>
-<body>
-  <button id="btn">click</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <button id="btn">click</button>
+  </body>
+  <script>
+    // Closure
+    /*  function createApp() {
+      const cars = [];
+
+      return {
+        add(car) {
+          cars.push(car);
+        },
+        show() {
+          console.log(cars);
+        },
+      };
+    }
+
+    const app = createApp();
+
+    const arrList = {
+      name: "boyhotkey96",
+      get: () => {
+        console.log(this);
+      },
+    };
+    console.log(arrList.get()); */
+
+    const btnClick = document.querySelector("button");
+
+    function test(message) {
+      console.log(message, "run...");
+    }
+
+    btnClick.onclick = test.bind(null, "Hi");
+    // btnClick.addEventListener('click', test())
+    // // nếu bạn gọi hàm test() trực tiếp thì nó sẽ thực thi khi bạn chưa click
+    // btnClick.onclick = test
+    // btnClick.addEventListener('click', test) // Bạn phải gọi gián tiếp như này mới đúng nhé!
+  </script>
 </html>

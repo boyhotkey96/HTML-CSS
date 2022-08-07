@@ -772,3 +772,8 @@ function convertCharacter(input) {
   console.log(output)
 }
 convertCharacter('1 11 111 1111 11111 1'); */
+
+
+
+
+
